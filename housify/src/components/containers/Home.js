@@ -1,18 +1,33 @@
 import React, { useState } from 'react';
+import { motion, useMotionValue, useTransform, AnimatePresence } from 'framer-motion';
 import City from '../City';
 import Filters from '../Filters';
 import CardItem from '../CardItem';
 import '../../styles.css';
 import Demo from '../../data.js';
-import TinderCard from 'react-tinder-card'; // Import from react-tinder-card
-import backgroundImage from '../../images/bg.png'; // Import the image as a variable
+import backgroundImage from '../../images/bg.png';
 
 const Home = () => {
   const [stack, setStack] = useState(Demo);
   const [swiped, setSwiped] = useState(false);
   const [swipeDirection, setSwipeDirection] = useState('');
 
+  // Track card position and swipe gesture
+  const cardX = useMotionValue(0);
+  const cardY = useMotionValue(0);
+
+  // Rotation based on swipe distance
+  const rotate = useTransform(cardX, [-300, 0, 300], [-50, 0, 50]);
+  const opacity = useTransform(cardX, [-300, 0, 300], [0, 1, 0]);
+
   const onSwipe = (direction) => {
+    // You can add logic here to handle matching or disliking
+    if (direction === 'right') {
+      // Handle matching (e.g., add logic to record a match)
+    } else if (direction === 'left') {
+      // Handle disliking (e.g., add logic to record a dislike)
+    }
+
     // Remove the top card from the stack
     setStack((prevStack) => prevStack.slice(1));
 
@@ -21,13 +36,6 @@ const Home = () => {
 
     // Start animation
     setSwiped(true);
-
-    // You can add logic here to handle matching or disliking
-    if (direction === 'right') {
-      // Handle matching (e.g., add logic to record a match)
-    } else if (direction === 'left') {
-      // Handle disliking (e.g., add logic to record a dislike)
-    }
   };
 
   const handleMatch = () => {
@@ -52,13 +60,30 @@ const Home = () => {
           <Filters />
         </div>
 
-        <div className="card-stack">
+        <AnimatePresence>
           {stack.length > 0 && (
-            <TinderCard
+            <motion.div
               key={stack[0].id}
-              onSwipe={onSwipe}
-              preventSwipe={['up', 'down']} // Specify the directions you want to prevent
-              className={`card${swiped ? ` swiped-${swipeDirection}` : ''}`}
+              className="card"
+              style={{
+                x: cardX,
+                y: cardY,
+                rotate,
+                opacity,
+              }}
+              drag="x"
+              dragConstraints={{ left: 0, right: 0 }}
+              dragElastic={0.4}
+              onDragEnd={(event, info) => {
+                if (Math.abs(info.point.x) > 100) {
+                  const direction = info.point.x > 0 ? 'right' : 'left';
+                  onSwipe(direction);
+                } else {
+                  cardX.set(0);
+                  cardY.set(0);
+                }
+              }}
+              transition={{ duration: 0.2 }}
             >
               <CardItem
                 image={stack[0].image}
@@ -67,9 +92,9 @@ const Home = () => {
                 matches={stack[0].match}
                 actions
               />
-            </TinderCard>
+            </motion.div>
           )}
-        </div>
+        </AnimatePresence>
 
         <div className="actions">
           <button className="dislike-button" onClick={handleDislike}>
@@ -79,6 +104,17 @@ const Home = () => {
             Heart
           </button>
         </div>
+
+        {swiped && (
+          <motion.div
+            className={`swipe-overlay ${swipeDirection === 'left' ? 'left' : 'right'}`}
+            initial={false}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            {swipeDirection === 'left' ? 'Disliked' : 'Liked'}
+          </motion.div>
+        )}
       </div>
     </div>
   );
