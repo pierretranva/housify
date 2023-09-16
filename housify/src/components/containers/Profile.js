@@ -7,16 +7,17 @@
 
   const Profile = () => {
     const {
-      age,
-      image,
-      info1,
-      info2,
-      info3,
-      info4,
-      location,
-      match,
-      name
-    } = Demo[7];
+      id,
+    name,
+    status,
+    price,
+    match,
+    description,
+    message,
+    location,
+    image
+
+    } = Demo[0];
 
     return (
       <div className="bg"> {/* Use className for styling in React */}
@@ -40,12 +41,11 @@
           <ProfileItem
             matches={match}
             name={name}
-            age={age}
             location={location}
-            info1={info1}
-            info2={info2}
-            info3={info3}
-            info4={info4}
+            id={id}
+            status={status}
+            price={price}
+            description={description}
           />
 
           <div className="actionsProfile">

@@ -1,0 +1,19 @@
+.floatingEco {
+	display: flex;
+	width: fit-content;
+	border-radius: 8px;
+	background-color: #1cde53;
+    padding: 8px;
+	text-align: center;
+	justify-content: center;
+    align-items: center;
+    transform: translate(125px, -20px);
+}
+.profileItemContainer {
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    /* vertical-align: middle; */
+}

@@ -90,6 +90,7 @@ const Home = () => {
                 name={stack[0].name}
                 description={stack[0].description}
                 matches={stack[0].match}
+                variant={true}
                 actions
               />
             </motion.div>
