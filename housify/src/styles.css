@@ -1,0 +1,373 @@
+Define your color constants
+:root {
+    --primary-color: #7444C0;
+    --secondary-color: #5636B8;
+    --white: #FFFFFF;
+    --gray: #757E90;
+    --dark-gray: #363636;
+    --black: #000000;
+    --online-status: #46A575;
+    --offline-status: #D04949;
+    --star-actions: #FFA200;
+    --like-actions: #B644B2;
+    --dislike-actions: #363636;
+    --flash-actions: #5028D7;
+    --icon-font: "tinderclone";
+  }
+  
+
+  :root {
+    --dimension-width: calc(100vw - 100px); /* Adjust as needed */
+    --dimension-height: 100vh; /* Adjust as needed */
+  }
+  
+
+  .containerCardItem {
+    background-color: var(--white);
+    border-radius: 8px;
+    align-items: center;
+    margin: 10px;
+    box-shadow: 0 10px 10px 0 var(--black);
+  }
+  
+  .matchesCardItem {
+    margin-top: -35px;
+    background-color: var(--primary-color);
+    padding: 7px 20px;
+    border-radius: 20px;
+  }
+  
+  .matchesTextCardItem {
+    font-family: var(--icon-font);
+    color: var(--white);
+  }
+  
+  .descriptionCardItem {
+    color: var(--gray);
+    text-align: center;
+  }
+  
+  .status {
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .statusText {
+    color: var(--gray);
+    font-size: 12px;
+  }
+  
+  .online,
+  .offline {
+    width: 6px;
+    height: 6px;
+    border-radius: 3px;
+    margin-right: 4px;
+  }
+  
+  .online {
+    background-color: var(--online-status);
+  }
+  
+  .offline {
+    background-color: var(--offline-status);
+  }
+  
+  .actionsCardItem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 30px 0;
+  }
+  
+  .button,
+  .miniButton {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    background-color: var(--white);
+    margin: 0 7px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 20px 20px 0 var(--dark-gray);
+  }
+  
+  .miniButton {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .star {
+    font-family: var(--icon-font);
+    color: var(--star-actions);
+  }
+  
+  .like {
+    font-size: 25px;
+    font-family: var(--icon-font);
+    color: var(--like-actions);
+  }
+  
+  .dislike {
+    font-size: 25px;
+    font-family: var(--icon-font);
+    color: var(--dislike-actions);
+  }
+  
+  .flash {
+    font-family: var(--icon-font);
+    color: var(--flash-actions);
+  }
+  
+  /* COMPONENT - CITY */
+  .city {
+    background-color: var(--white);
+    padding: 10px;
+    border-radius: 20px;
+    width: 90px;
+    box-shadow: 0 10px 10px 0 var(--black);
+  }
+  
+  .cityText {
+    font-family: var(--icon-font);
+    color: var(--dark-gray);
+    font-size: 13px;
+  }
+  
+  /* COMPONENT - FILTERS */
+  .filters {
+    background-color: var(--white);
+    padding: 10px;
+    border-radius: 20px;
+    width: 70px;
+    box-shadow: 0 10px 10px 0 var(--black);
+  }
+  
+  .filtersText {
+    font-family: var(--icon-font);
+    color: var(--dark-gray);
+    font-size: 13px;
+  }
+  
+  /* COMPONENT - MESSAGE */
+  .containerMessage {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    padding: 0 10px;
+    width: var(--dimension-width);
+  }
+  
+  .avatar {
+    border-radius: 30px;
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+    /* margin-vertical: 15px; */
+  }
+  
+  .message {
+    color: var(--gray);
+    font-size: 12px;
+    padding-top: 5px;
+  }
+  
+  /* COMPONENT - PROFILE ITEM */
+  .containerProfileItem {
+    background-color: var(--white);
+    padding: 0 10px;
+    padding-bottom: 25px;
+    margin: 20px;
+    border-radius: 8px;
+    margin-top: -65px;
+    box-shadow: 0 10px 10px 0 var(--black);
+  }
+  
+  .matchesProfileItem {
+    width: 131px;
+    margin-top: -15px;
+    background-color: var(--primary-color);
+    padding: 7px 20px;
+    border-radius: 20px;
+    text-align: center;
+    align-self: center;
+  }
+  
+  .matchesTextProfileItem {
+    font-family: var(--icon-font);
+    color: var(--white);
+  }
+  
+  .name {
+    padding-top: 25px;
+    padding-bottom: 5px;
+    color: var(--dark-gray);
+    font-size: 15px;
+    text-align: center;
+  }
+  
+  .descriptionProfileItem {
+    color: var(--gray);
+    text-align: center;
+    padding-bottom: 20px;
+    font-size: 13px;
+  }
+  
+  .info {
+    padding: 8px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .iconProfile {
+    font-family: var(--icon-font);
+    font-size: 12px;
+    color: var(--dark-gray);
+    padding: 0 10px;
+  }
+  
+  .infoContent {
+    color: var(--gray);
+    font-size: 13px;
+  }
+  
+  /* CONTAINER - GENERAL */
+  .bg {
+    flex: 1;
+    width: var(--dimension-width);
+    height: var(--dimension-height);
+    background-size: cover;
+  }
+  
+  .top {
+    padding-top: 50px;
+    margin: 0 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .title {
+    padding-bottom: 10px;
+    font-size: 22px;
+    color: var(--dark-gray);
+  }
+  
+  .icon {
+    font-family: var(--icon-font);
+    font-size: 20px;
+    color: var(--dark-gray);
+    padding-right: 10px;
+  }
+  
+  /* CONTAINER - HOME */
+  .containerHome {
+    margin: 0 10px;
+  }
+  
+  /* CONTAINER - MATCHES */
+  .containerMatches {
+    justify-content: space-between;
+    flex: 1;
+    padding: 0 10px;
+  }
+  
+  /* CONTAINER - MESSAGES */
+  .containerMessages {
+    justify-content: space-between;
+    flex: 1;
+    padding: 0 10px;
+  }
+  
+  /* CONTAINER - PROFILE */
+  .containerProfile {
+    margin: 0;
+  }
+  
+  .photo {
+    width: var(--dimension-width);
+    height: 450px;
+  }
+  
+  .topIconLeft {
+    font-family: var(--icon-font);
+    font-size: 20px;
+    color: var(--white);
+    padding-left: 20px;
+    margin-top: -20px;
+    transform: rotate(90deg);
+  }
+  
+  .topIconRight {
+    font-family: var(--icon-font);
+    font-size: 20px;
+    color: var(--white);
+    padding-right: 20px;
+  }
+  
+  .actionsProfile {
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .iconButton {
+    font-family: var(--icon-font);
+    font-size: 20px;
+    color: var(--white);
+  }
+  
+  .textButton {
+    font-family: var(--icon-font);
+    font-size: 15px;
+    color: var(--white);
+    padding-left: 5px;
+  }
+  
+  .circledButton {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: var(--primary-color);
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+  }
+  
+  .roundedButton {
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 10px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: var(--secondary-color);
+    padding: 0 20px;
+  }
+  
+  /* MENU */
+  .tabButton {
+    padding-top: 20px;
+    padding-bottom: 30px;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+  }
+  
+  .tabButtonText {
+    text-transform: uppercase;
+  }
+  
+  .iconMenu {
+    font-family: var(--icon-font);
+    height: 20px;
+    padding-bottom: 7px;
+  }
+  
