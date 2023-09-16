@@ -11,10 +11,12 @@ const Home = () => {
   const swiperRef = useRef(null);
 
   const onSwipe = (direction) => {
-    if (direction === 'left') {
-      swiperRef.current.swipe('left');
-    } else if (direction === 'right') {
-      swiperRef.current.swipe('right');
+    if (swiperRef.current) {
+      if (direction === 'left') {
+        swiperRef.current.swipe('left');
+      } else if (direction === 'right') {
+        swiperRef.current.swipe('right');
+      }
     }
   };
 
@@ -36,6 +38,7 @@ const Home = () => {
               key={index}
               onSwipe={onSwipe}
               preventSwipe={['up', 'down']} // Specify the directions you want to prevent
+              ref={(ref) => (swiperRef.current = ref)} // Assign the ref to swiperRef.current
             >
               <CardItem
                 image={item.image}
