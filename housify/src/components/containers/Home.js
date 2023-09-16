@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import City from '../City';
 import Filters from '../Filters';
 import CardItem from '../CardItem';
@@ -7,27 +7,18 @@ import Demo from '../../data.js';
 import TinderCard from 'react-tinder-card'; // Import from react-tinder-card
 import backgroundImage from '../../images/bg.png'; // Import the image as a variable
 
-const Home = ({ onLike }) => {
-  const swiperRef = useRef(null);
-  const [likedProfiles, setLikedProfiles] = useState([]);
+const Home = () => {
+  const [stack, setStack] = useState(Demo);
 
-  const onSwipe = (direction) => {
-    if (swiperRef.current) {
-      if (direction === 'left') {
-        swiperRef.current.swipe('left');
-      } else if (direction === 'right') {
-        swiperRef.current.swipe('right');
-        // Pass the liked profile to the onLike function
-        onLike(Demo[likedProfiles.length]);
-        setLikedProfiles([...likedProfiles, likedProfiles.length]);
-      }
-    }
+  const onSwipe = () => {
+    // Remove the top card from the stack
+    setStack((prevStack) => prevStack.slice(1));
   };
 
   return (
     <div
       style={{
-        backgroundImage: `url(${backgroundImage})`
+        backgroundImage: `url(${backgroundImage})`,
       }}
     >
       <div className="containerHome">
@@ -36,33 +27,24 @@ const Home = ({ onLike }) => {
           <Filters />
         </div>
 
-        <div>
-          {Demo.map((item, index) => (
+        <div className="card-stack">
+          {stack.length > 0 && (
             <TinderCard
-              key={index}
+              key={stack[0].id}
               onSwipe={onSwipe}
-              preventSwipe={['up', 'down']}
-              ref={swiperRef}
+              preventSwipe={['up', 'down']} // Specify the directions you want to prevent
+              className="card"
             >
               <CardItem
-                image={item.image}
-                name={item.name}
-                description={item.description}
-                matches={item.match}
+                image={stack[0].image}
+                name={stack[0].name}
+                description={stack[0].description}
+                matches={stack[0].match}
                 actions
-                onSwipeLeft={() => onSwipe('left')}
-                onSwipeRight={() => onSwipe('right')}
               />
             </TinderCard>
-          ))}
+          )}
         </div>
-
-        <button
-          className="heart-button"
-          onClick={() => onSwipe('right')}
-        >
-          Heart
-        </button>
       </div>
     </div>
   );
