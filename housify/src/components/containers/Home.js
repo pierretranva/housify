@@ -10,9 +10,26 @@ import backgroundImage from '../../images/bg.png'; // Import the image as a vari
 const Home = () => {
   const [stack, setStack] = useState(Demo);
 
-  const onSwipe = () => {
+  const onSwipe = (direction) => {
     // Remove the top card from the stack
     setStack((prevStack) => prevStack.slice(1));
+
+    // You can add logic here to handle matching or disliking
+    if (direction === 'right') {
+      // Handle matching (e.g., add logic to record a match)
+    } else if (direction === 'left') {
+      // Handle disliking (e.g., add logic to record a dislike)
+    }
+  };
+
+  const handleMatch = () => {
+    // Simulate a right swipe (match) when clicking the heart button
+    onSwipe('right');
+  };
+
+  const handleDislike = () => {
+    // Simulate a left swipe (dislike) when clicking the dislike button
+    onSwipe('left');
   };
 
   return (
@@ -44,6 +61,15 @@ const Home = () => {
               />
             </TinderCard>
           )}
+        </div>
+
+        <div className="actions">
+          <button className="dislike-button" onClick={handleDislike}>
+            Dislike
+          </button>
+          <button className="heart-button" onClick={handleMatch}>
+            Heart
+          </button>
         </div>
       </div>
     </div>
