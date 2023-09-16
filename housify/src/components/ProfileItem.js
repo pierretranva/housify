@@ -13,45 +13,45 @@ const ProfileItem = ({
   name
 }) => {
   return (
-    <div className={styles.containerProfileItem}>
-      <div className={styles.matchesProfileItem}>
-        <span className={styles.matchesTextProfileItem}>
+    <div className="containerProfileItem">
+      <div className="matchesProfileItem">
+        <span className="matchesTextProfileItem">
           <Icon name="heart" /> {matches}% Match!
         </span>
       </div>
 
-      <span className={styles.name}>{name}</span>
+      <span className="name">{name}</span>
 
-      <span className={styles.descriptionProfileItem}>
+      <span className="descriptionProfileItem">
         {age} - {location}
       </span>
 
-      <div className={styles.info}>
-        <span className={styles.iconProfile}>
+      <div className="info">
+        <span className="iconProfile">
           <Icon name="user" />
         </span>
-        <span className={styles.infoContent}>{info1}</span>
+        <span className="infoContent">{info1}</span>
       </div>
 
-      <div className={styles.info}>
-        <span className={styles.iconProfile}>
+      <div className="info">
+        <span className="iconProfile">
           <Icon name="circle" />
         </span>
-        <span className={styles.infoContent}>{info2}</span>
+        <span className="infoContent">{info2}</span>
       </div>
 
-      <div className={styles.info}>
-        <span className={styles.iconProfile}>
+      <div className="info">
+        <span className="iconProfile">
           <Icon name="hashtag" />
         </span>
-        <span className={styles.infoContent}>{info3}</span>
+        <span className="infoContent">{info3}</span>
       </div>
 
-      <div className={styles.info}>
-        <span className={styles.iconProfile}>
+      <div className="info">
+        <span className="iconProfile">
           <Icon name="calendar" />
         </span>
-        <span className={styles.infoContent}>{info4}</span>
+        <span className="infoContent">{info4}</span>
       </div>
     </div>
   );
