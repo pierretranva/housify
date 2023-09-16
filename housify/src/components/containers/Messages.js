@@ -4,6 +4,7 @@ import Message from '../Message.js';
 import Icon from '../Icon.js';
 import Demo from '../../data.js';
 import '../../vystyle.css'
+import MoreVertIcon from '@mui/icons-material/MoreVert';
 
 const Messages = () => {
   return (
@@ -12,10 +13,8 @@ const Messages = () => {
         <div>
           <div className="top">
             <h1 className="title">Messages</h1>
-            <button>
-              <span className="icon">
-                <Icon name="optionsV" />
-              </span>
+            <button className="vy-button">
+              <MoreVertIcon></MoreVertIcon>
             </button>
           </div>
 
