@@ -11,10 +11,10 @@ const Home = () => {
   return (
     <ImageBackground
       source={require('../assets/images/bg.png')}
-      style={styles.bg}
+      style="bg"
     >
-      <View style={styles.containerHome}>
-        <View style={styles.top}>
+      <View style="containerHome">
+        <View style="top">
           <City />
           <Filters />
         </View>
