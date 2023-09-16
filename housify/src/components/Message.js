@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../../styles.css'; // Import your CSS styles instead of React Native styles
+import styles from '../styles.css'; // Import your CSS styles instead of React Native styles
 
 const Message = ({ image, lastMessage, name }) => {
   return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../../styles.css'; // Import your CSS styles instead of React Native styles
+import  '../styles.css'; 
 import Icon from './Icon';
 
 const CardItem = ({
@@ -30,14 +30,14 @@ const CardItem = ({
   };
 
   return (
-    <div className={styles.containerCardItem}>
+    <div className="containerCardItem">
       {/* IMAGE */}
       <img src={image} alt="User" style={imageStyle} />
 
       {/* MATCHES */}
       {matches && (
-        <div className={styles.matchesCardItem}>
-          <span className={styles.matchesTextCardItem}>
+        <div className="matchesCardItem">
+          <span className="matchesTextCardItem">
             <Icon name="heart" /> {matches}% Match!
           </span>
         </div>
@@ -48,40 +48,40 @@ const CardItem = ({
 
       {/* DESCRIPTION */}
       {description && (
-        <span className={styles.descriptionCardItem}>{description}</span>
+        <span className="descriptionCardItem">{description}</span>
       )}
 
       {/* STATUS */}
       {status && (
-        <div className={styles.status}>
-          <div className={status === 'Online' ? styles.online : styles.offline} />
-          <span className={styles.statusText}>{status}</span>
+        <div className="status">
+          <div className={status === 'Online' ? "online" : "offline"} />
+          <span className="statusText">{status}</span>
         </div>
       )}
 
       {/* ACTIONS */}
       {actions && (
-        <div className={styles.actionsCardItem}>
-          <button className={styles.miniButton}>
-            <span className={styles.star}>
+        <div className="actionsCardItem">
+          <button className="miniButton">
+            <span className="star">
               <Icon name="star" />
             </span>
           </button>
 
-          <button className={styles.button} onClick={onPressLeft}>
-            <span className={styles.like}>
+          <button className="button" onClick={onPressLeft}>
+            <span className="like">
               <Icon name="like" />
             </span>
           </button>
 
-          <button className={styles.button} onClick={onPressRight}>
-            <span className={styles.dislike}>
+          <button className="button" onClick={onPressRight}>
+            <span className="dislike">
               <Icon name="dislike" />
             </span>
           </button>
 
-          <button className={styles.miniButton}>
-            <span className={styles.flash}>
+          <button className="miniButton">
+            <span className="flash">
               <Icon name="flash" />
             </span>
           </button>

@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from '../assets/styles';
-import Message from '../components/Message';
-import Icon from '../components/Icon';
-import Demo from '../assets/data/demo.js';
+import '../../styles.css';
+import Message from '../Message.js';
+import Icon from '../Icon.js';
+import Demo from '../../data.js';
 
 const Messages = () => {
   return (

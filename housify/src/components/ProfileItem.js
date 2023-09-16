@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../styles.css'; // Import your CSS styles
+import'../styles.css'; // Import your CSS styles
 import Icon from './Icon'; // Assuming you have a suitable icon component/library
 
 const ProfileItem = ({

@@ -1,17 +1,17 @@
 import React from 'react';
-import CardItem from '../components/CardItem';
-import Icon from '../components/Icon';
-import Demo from '../assets/data/demo.js';
+import CardItem from '../CardItem.js';
+import Icon from '../Icon.js';
+import Demo from '../../data.js';
 
 const Matches = () => {
   return (
-    <div className="bg" style="bg">
-      <div className="containerMatches" style="containerMatches">
+    <div className="bg">
+      <div className="containerMatches" >
         <div>
-          <div style="top">
-            <h1 style="title">Matches</h1>
+          <div className="top">
+            <h1 className="title">Matches</h1>
             <button>
-              <span style="icon">
+              <span className="icon">
                 <Icon name="optionsV" />
               </span>
             </button>

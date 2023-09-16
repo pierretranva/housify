@@ -1,11 +1,11 @@
 import React, { useRef } from 'react';
-import City from '../components/City';
-import Filters from '../components/Filters';
-import CardItem from '../components/CardItem';
-import styles from '../assets/styles';
-import Demo from '../assets/data/demo.js';
+import City from '../City';
+import Filters from '../Filters';
+import CardItem from '../CardItem';
+import '../../styles.css';
+import Demo from '../../data.js';
 import TinderCard from 'react-tinder-card'; // Import from react-tinder-card
-import backgroundImage from '../assets/images/bg.png'; // Import the image as a variable
+import backgroundImage from '../../images/bg.png'; // Import the image as a variable
 
 const Home = () => {
   const swiperRef = useRef(null);
@@ -21,12 +21,11 @@ const Home = () => {
   return (
     <div
       style={{
-        backgroundImage: `url(${backgroundImage})`,
-        ...styles.bg, // Add background styles here if needed
+        backgroundImage: `url(${backgroundImage})`
       }}
     >
-      <div style={styles.containerHome}>
-        <div style={styles.top}>
+      <div className="containerHome">
+        <div className="top">
           <City />
           <Filters />
         </div>

@@ -1,14 +1,54 @@
-import logo from './logo.svg';
-import './App.css';
-import Profile from './components/containers/Profile'
+import React from 'react';
+import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
+import './styles.css'
+import HomeScreen from './components/containers/Home';
+import MatchesScreen from './components/containers/Matches';
+import MessagesScreen from './components/containers/Messages';
+import ProfileScreen from './components/containers/Profile';
+import Icon from './components/Icon';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-        <Profile/>
+    <Router>
+      <div>
+        <nav className="tabBar">
+          <ul className="tabList">
+            <li className="tabItem">
+              <Link to="/" className="tabLin">
+                <Icon name="explore" />
+                <span>Explore</span>
+              </Link>
+            </li>
+            <li className="tabItem">
+              <Link to="/matches" className="tabLink">
+                <Icon name="heart" />
+                <span>Matches</span>
+              </Link>
+            </li>
+            <li className="tabItem">
+              <Link to="/chat" className="tabLink">
+                <Icon name="chat" />
+                <span>Chat</span>
+              </Link>
+            </li>
+            <li className="tabItem">
+              <Link to="/profile" className="tabLink">
+                <Icon name="user" />
+                <span>Profile</span>
+              </Link>
+            </li>
+          </ul>
+        </nav>
 
-    </div>
+        <Routes>
+          <Route path="/" exact component={HomeScreen} />
+          <Route path="/matches" component={MatchesScreen} />
+          <Route path="/chat" component={MessagesScreen} />
+          <Route path="/profile" component={ProfileScreen} />
+        </Routes>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
