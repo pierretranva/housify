@@ -5,8 +5,8 @@ import Demo from '../../data.js';
 
 const Matches = ({ likedProfiles }) => {
   // Filter Demo data to display only liked profiles as matches
-  const matchedProfiles = Demo.filter((item) =>
-    likedProfiles.some((likedProfile) => likedProfile.id === item.id)
+  const matchedProfiles = Demo.filter((item, index) =>
+    likedProfiles.includes(index)
   );
 
   return (
