@@ -10,11 +10,9 @@ import backgroundImage from '../../images/bg.png'; // Import the image as a vari
 const Home = () => {
   const [stack, setStack] = useState(Demo);
 
-  const onSwipe = (direction, cardIndex) => {
-    if (direction === 'left') {
-      // Remove the swiped card from the stack
-      setStack((prevStack) => prevStack.filter((_, index) => index !== cardIndex));
-    }
+  const onSwipe = () => {
+    // Remove the top card from the stack
+    setStack((prevStack) => prevStack.slice(1));
   };
 
   return (
@@ -30,22 +28,22 @@ const Home = () => {
         </div>
 
         <div className="card-stack">
-          {stack.map((item, index) => (
+          {stack.length > 0 && (
             <TinderCard
-              key={index}
-              onSwipe={(direction) => onSwipe(direction, index)}
+              key={stack[0].id}
+              onSwipe={onSwipe}
               preventSwipe={['up', 'down']} // Specify the directions you want to prevent
               className="card"
             >
               <CardItem
-                image={item.image}
-                name={item.name}
-                description={item.description}
-                matches={item.match}
+                image={stack[0].image}
+                name={stack[0].name}
+                description={stack[0].description}
+                matches={stack[0].match}
                 actions
               />
             </TinderCard>
-          ))}
+          )}
         </div>
       </div>
     </div>
