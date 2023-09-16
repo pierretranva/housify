@@ -11,6 +11,7 @@ const Home = () => {
   const [stack, setStack] = useState(Demo);
   const [swiped, setSwiped] = useState(false);
   const [swipeDirection, setSwipeDirection] = useState('');
+  const [likedProfiles, setLikedProfiles] = useState([]);
 
   const onSwipe = (direction) => {
     // Remove the top card from the stack
@@ -25,6 +26,7 @@ const Home = () => {
     // You can add logic here to handle matching or disliking
     if (direction === 'right') {
       // Handle matching (e.g., add logic to record a match)
+      setLikedProfiles((prevLikedProfiles) => [...prevLikedProfiles, stack[0]]);
     } else if (direction === 'left') {
       // Handle disliking (e.g., add logic to record a dislike)
     }
@@ -93,6 +95,19 @@ const Home = () => {
             Heart
           </button>
         </div>
+      </div>
+
+      <div className="liked-profiles">
+        <h2>Liked Profiles</h2>
+        {likedProfiles.map((profile) => (
+          <CardItem
+            key={profile.id}
+            image={profile.image}
+            name={profile.name}
+            description={profile.description}
+            matches={profile.match}
+          />
+        ))}
       </div>
     </div>
   );
