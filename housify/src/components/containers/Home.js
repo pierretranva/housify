@@ -9,10 +9,18 @@ import backgroundImage from '../../images/bg.png'; // Import the image as a vari
 
 const Home = () => {
   const [stack, setStack] = useState(Demo);
+  const [swiped, setSwiped] = useState(false);
+  const [swipeDirection, setSwipeDirection] = useState('');
 
   const onSwipe = (direction) => {
     // Remove the top card from the stack
     setStack((prevStack) => prevStack.slice(1));
+
+    // Record swipe direction
+    setSwipeDirection(direction);
+
+    // Start animation
+    setSwiped(true);
 
     // You can add logic here to handle matching or disliking
     if (direction === 'right') {
@@ -50,7 +58,7 @@ const Home = () => {
               key={stack[0].id}
               onSwipe={onSwipe}
               preventSwipe={['up', 'down']} // Specify the directions you want to prevent
-              className="card"
+              className={`card${swiped ? ` swiped-${swipeDirection}` : ''}`}
             >
               <CardItem
                 image={stack[0].image}
