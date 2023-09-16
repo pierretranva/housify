@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useState } from 'react';
 import City from '../City';
 import Filters from '../Filters';
 import CardItem from '../CardItem';
@@ -8,12 +8,19 @@ import TinderCard from 'react-tinder-card'; // Import from react-tinder-card
 import backgroundImage from '../../images/bg.png'; // Import the image as a variable
 
 const Home = () => {
-  const swiperRef = useRef(null);
+  const [stack, setStack] = useState(Demo);
+
+  const onSwipe = (direction, cardIndex) => {
+    if (direction === 'left') {
+      // Remove the swiped card from the stack
+      setStack((prevStack) => prevStack.filter((_, index) => index !== cardIndex));
+    }
+  };
 
   return (
     <div
       style={{
-        backgroundImage: `url(${backgroundImage})`
+        backgroundImage: `url(${backgroundImage})`,
       }}
     >
       <div className="containerHome">
@@ -22,15 +29,13 @@ const Home = () => {
           <Filters />
         </div>
 
-        <div>
-          {Demo.map((item, index) => (
+        <div className="card-stack">
+          {stack.map((item, index) => (
             <TinderCard
               key={index}
-              onSwipe={(direction) => {
-                // Handle the swipe direction here if needed
-              }}
+              onSwipe={(direction) => onSwipe(direction, index)}
               preventSwipe={['up', 'down']} // Specify the directions you want to prevent
-              ref={(ref) => (swiperRef.current = ref)} // Assign the ref to swiperRef.current
+              className="card"
             >
               <CardItem
                 image={item.image}
