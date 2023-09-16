@@ -1,12 +1,22 @@
-import React from 'react';
-import CardItem from '../CardItem.js';
-import Icon from '../Icon.js';
+import React, { useState, useEffect } from 'react';
+import CardItem from '../CardItem';
+import Icon from '../Icon';
 import Demo from '../../data.js';
 
-const Matches = () => {
+const Matches = ({ likedProfiles }) => {
+  const [matches, setMatches] = useState([]);
+
+  useEffect(() => {
+    // Filter Demo data to display only liked profiles as matches
+    const matchedProfiles = Demo.filter((item) =>
+      likedProfiles.some((likedProfile) => likedProfile.id === item.id)
+    );
+    setMatches(matchedProfiles);
+  }, [likedProfiles]);
+
   return (
     <div className="bg">
-      <div className="containerMatches" >
+      <div className="containerMatches">
         <div>
           <div className="top">
             <h1 className="title">Matches</h1>
@@ -18,7 +28,7 @@ const Matches = () => {
           </div>
 
           <div>
-            {Demo.map((item, index) => (
+            {matches.map((item, index) => (
               <button key={index}>
                 <CardItem
                   image={item.image}
