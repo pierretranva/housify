@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import './styles.css'
-import HomeScreen from './components/containers/Home';
-import MatchesScreen from './components/containers/Matches';
+import Home from './components/containers/Home';
+import Matches from './components/containers/Matches';
 import MessagesScreen from './components/containers/Messages';
 import ProfileScreen from './components/containers/Profile';
 import Icon from './components/Icon';
 
 const App = () => {
+  const [likedProfiles, setLikedProfiles] = useState([]);
+
+  const handleLike = (profile) => {
+    setLikedProfiles((prevLikedProfiles) => [...prevLikedProfiles, profile]);
+  };
+
   return (
     <Router>
       <div>
@@ -41,8 +47,14 @@ const App = () => {
         </nav>
 
         <Routes>
-          <Route path="/" element={<HomeScreen />} />
-          <Route path="/matches" element={<MatchesScreen />} />
+          <Route
+            path="/"
+            element={<Home onLike={handleLike} />}
+          />
+          <Route
+            path="/matches"
+            element={<Matches likedProfiles={likedProfiles} />}
+          />
           <Route path="/chat" element={<MessagesScreen />} />
           <Route path="/profile" element={<ProfileScreen />} />
         </Routes>
