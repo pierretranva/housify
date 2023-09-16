@@ -41,10 +41,10 @@ const App = () => {
         </nav>
 
         <Routes>
-          <Route path="/" exact component={HomeScreen} />
-          <Route path="/matches" component={MatchesScreen} />
-          <Route path="/chat" component={MessagesScreen} />
-          <Route path="/profile" component={ProfileScreen} />
+          <Route path="/" element={<HomeScreen />} />
+          <Route path="/matches" element={<MatchesScreen />} />
+          <Route path="/chat" element={<MessagesScreen />} />
+          <Route path="/profile" element={<ProfileScreen />} />
         </Routes>
       </div>
     </Router>
