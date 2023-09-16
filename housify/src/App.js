@@ -7,42 +7,53 @@ import MessagesScreen from "./components/containers/Messages";
 import ProfileScreen from "./components/containers/Profile";
 // import Icon from "./components/Icon";
 import { Paper, BottomNavigation, BottomNavigationAction } from "@mui/material";
-import SearchIcon from '@mui/icons-material/Search';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import SmsIcon from '@mui/icons-material/Sms';
-import PersonIcon from '@mui/icons-material/Person';
-
+import SearchIcon from "@mui/icons-material/Search";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import SmsIcon from "@mui/icons-material/Sms";
+import PersonIcon from "@mui/icons-material/Person";
 
 const App = () => {
 	const [likedProfiles, setLikedProfiles] = useState([]);
-
+    const [value, setValue] = useState("Explore")
+	// const [toggleTab, setToggleTab] = useState({ explore: "green", matches: "", chat: "", profile: "" });
 
 	const handleLike = (profile) => {
 		setLikedProfiles((prevLikedProfiles) => [...prevLikedProfiles, profile]);
 	};
+	// const updateTab= (newValue) => {
+	//     let temp = toggleTab;
+	//     for (let key in temp) {
+	//         if (key == newValue) {
+	//             temp[key] = "green";
+	//         } else {
+	//             temp[key] = "";
+	//         }
+	//     }
+	//     setToggleTab(temp);
 
+	// }
 	return (
 		<Router>
 			<div>
 				<Paper sx={{ position: "fixed", bottom: 0, left: 0, right: 0 }} elevation={3}>
 					<BottomNavigation
-						showLabels
-						// value={""}
-						// onChange={(event, newValue) => {
-						// 	setValue(newValue);
-						// }}
+						
+						value={value}
+						onChange={(event, newValue) => {
+							setValue(newValue);
+						}}
 					>
 						<Link to="/" className="tabLink">
-							<BottomNavigationAction label="Explore" icon={<SearchIcon/>} />
+							<BottomNavigationAction  sx={{m: 1}} showLabel={true} label="Explore" icon={<SearchIcon />} />
 						</Link>
 						<Link to="/matches" className="tabLink">
-							<BottomNavigationAction label="Matches" icon={<FavoriteIcon />} />
+							<BottomNavigationAction sx={{m: 1}} showLabel={true} label="Matches" icon={<FavoriteIcon />} />
 						</Link>
 						<Link to="/chat" className="tabLink">
-							<BottomNavigationAction label="Chat" icon={<SmsIcon />} />
+							<BottomNavigationAction sx={{m: 1}} showLabel={true} label="Chat" icon={<SmsIcon />} />
 						</Link>
 						<Link to="/profile" className="tabLink">
-							<BottomNavigationAction label="Profile" icon={<PersonIcon />} />
+							<BottomNavigationAction sx={{m: 1}} showLabel={true} label="Profile" icon={<PersonIcon />} />
 						</Link>
 					</BottomNavigation>
 				</Paper>
