@@ -3,6 +3,7 @@ import '../../styles.css';
 import Message from '../Message.js';
 import Icon from '../Icon.js';
 import Demo from '../../data.js';
+import '../../vystyle.css'
 
 const Messages = () => {
   return (
@@ -20,7 +21,7 @@ const Messages = () => {
 
           <div>
             {Demo.map((item, index) => (
-              <button key={index}>
+              <button key={index} className="vy-button">
                 <Message
                   image={item.image}
                   name={item.name}
