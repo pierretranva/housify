@@ -40,6 +40,12 @@ const Home = () => {
     onSwipe('left');
   };
 
+  const onAnimationEnd = () => {
+    // Animation ends, reset animation state
+    setSwiped(false);
+    setSwipeDirection('');
+  };
+
   return (
     <div
       style={{
@@ -52,13 +58,13 @@ const Home = () => {
           <Filters />
         </div>
 
-        <div className="card-stack">
+        <div className={`card-stack${swiped ? ` swiped-${swipeDirection}` : ''}`}>
           {stack.length > 0 && (
             <TinderCard
               key={stack[0].id}
               onSwipe={onSwipe}
               preventSwipe={['up', 'down']} // Specify the directions you want to prevent
-              className={`card${swiped ? ` swiped-${swipeDirection}` : ''}`}
+              className="card"
             >
               <CardItem
                 image={stack[0].image}
@@ -72,10 +78,18 @@ const Home = () => {
         </div>
 
         <div className="actions">
-          <button className="dislike-button" onClick={handleDislike}>
+          <button
+            className="dislike-button"
+            onClick={handleDislike}
+            onAnimationEnd={onAnimationEnd}
+          >
             Dislike
           </button>
-          <button className="heart-button" onClick={handleMatch}>
+          <button
+            className="heart-button"
+            onClick={handleMatch}
+            onAnimationEnd={onAnimationEnd}
+          >
             Heart
           </button>
         </div>
