@@ -6,13 +6,13 @@ import Demo from '../assets/data/demo.js';
 
 const Messages = () => {
   return (
-    <div className={styles.bg}>
-      <div className={styles.containerMessages}>
+    <div className="bg">
+      <div className="containerMessages">
         <div>
-          <div className={styles.top}>
-            <h1 className={styles.title}>Messages</h1>
+          <div className="top">
+            <h1 className="title">Messages</h1>
             <button>
-              <span className={styles.icon}>
+              <span className="icon">
                 <Icon name="optionsV" />
               </span>
             </button>
