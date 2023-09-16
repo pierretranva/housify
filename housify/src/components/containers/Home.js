@@ -1,46 +1,57 @@
-import React from 'react';
-import { View, ImageBackground } from 'react-native';
-import CardStack, { Card } from 'react-native-card-stack-swiper';
+import React, { useRef } from 'react';
 import City from '../components/City';
 import Filters from '../components/Filters';
 import CardItem from '../components/CardItem';
 import styles from '../assets/styles';
 import Demo from '../assets/data/demo.js';
+import TinderCard from 'react-tinder-card'; // Import from react-tinder-card
+import backgroundImage from '../assets/images/bg.png'; // Import the image as a variable
 
 const Home = () => {
+  const swiperRef = useRef(null);
+
+  const onSwipe = (direction) => {
+    if (direction === 'left') {
+      swiperRef.current.swipe('left');
+    } else if (direction === 'right') {
+      swiperRef.current.swipe('right');
+    }
+  };
+
   return (
-    <ImageBackground
-      source={require('../assets/images/bg.png')}
-      style="bg"
+    <div
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+        ...styles.bg, // Add background styles here if needed
+      }}
     >
-      <View style="containerHome">
-        <View style="top">
+      <div style={styles.containerHome}>
+        <div style={styles.top}>
           <City />
           <Filters />
-        </View>
+        </div>
 
-        <CardStack
-          loop={true}
-          verticalSwipe={false}
-          renderNoMoreCards={() => null}
-          ref={swiper => (this.swiper = swiper)}
-        >
+        <div>
           {Demo.map((item, index) => (
-            <Card key={index}>
+            <TinderCard
+              key={index}
+              onSwipe={onSwipe}
+              preventSwipe={['up', 'down']} // Specify the directions you want to prevent
+            >
               <CardItem
                 image={item.image}
                 name={item.name}
                 description={item.description}
                 matches={item.match}
                 actions
-                onPressLeft={() => this.swiper.swipeLeft()}
-                onPressRight={() => this.swiper.swipeRight()}
+                onSwipeLeft={() => onSwipe('left')}
+                onSwipeRight={() => onSwipe('right')}
               />
-            </Card>
+            </TinderCard>
           ))}
-        </CardStack>
-      </View>
-    </ImageBackground>
+        </div>
+      </div>
+    </div>
   );
 };
 
