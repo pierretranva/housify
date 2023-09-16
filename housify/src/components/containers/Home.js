@@ -10,16 +10,6 @@ import backgroundImage from '../../images/bg.png'; // Import the image as a vari
 const Home = () => {
   const swiperRef = useRef(null);
 
-  const onSwipe = (direction) => {
-    if (swiperRef.current) {
-      if (direction === 'left') {
-        swiperRef.current.swipe('left');
-      } else if (direction === 'right') {
-        swiperRef.current.swipe('right');
-      }
-    }
-  };
-
   return (
     <div
       style={{
@@ -36,7 +26,9 @@ const Home = () => {
           {Demo.map((item, index) => (
             <TinderCard
               key={index}
-              onSwipe={onSwipe}
+              onSwipe={(direction) => {
+                // Handle the swipe direction here if needed
+              }}
               preventSwipe={['up', 'down']} // Specify the directions you want to prevent
               ref={(ref) => (swiperRef.current = ref)} // Assign the ref to swiperRef.current
             >
@@ -46,8 +38,6 @@ const Home = () => {
                 description={item.description}
                 matches={item.match}
                 actions
-                onSwipeLeft={() => onSwipe('left')}
-                onSwipeRight={() => onSwipe('right')}
               />
             </TinderCard>
           ))}
