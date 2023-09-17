@@ -14,7 +14,6 @@ const Messages = () => {
 		<div className="bg">
 			<div className="containerMessages">
 				<div>
-					<div className="top">
 						<h1 className="title">Messages</h1>
 					</div>
 					<div className="chatCenterDiv">
@@ -51,7 +50,6 @@ const Messages = () => {
 						</div>
 					</div>
 				</div>
-			</div>
 		</div>
 	);
 };

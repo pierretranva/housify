@@ -45,10 +45,19 @@ height: 100%;
 }
 
 .matchesCardItem {
-	margin-top: -35px;
-	background-color: var(--primary-color);
+	margin-top: -25px;
+	background-color: green;
 	padding: 7px 20px;
+    padding-bottom: 10px;
 	border-radius: 20px;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.matchCardItemCenter{
+    display: flex;
+    justify-content: center;
 }
 
 .matchesTextCardItem {
@@ -302,8 +311,10 @@ justify-content: flex-start;
 }
 
 .title {
-	padding-bottom: 10px;
+	/* padding-bottom: 10px; */
 	font-size: 40px;
+  /* padding-top: 30px; */
+  background-color: #ffffff;
 	color: var(--dark-gray);
 }
 
@@ -330,11 +341,15 @@ justify-content: flex-start;
 
 /* CONTAINER - MATCHES */
 .containerMatches {
-	justify-content: space-between;
-	flex: 1;
-	padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background-image: url('./images/bgmatches.png');
-  /* background-repeat: no-repeat; */
+  padding-top: 50px;
+  /* min-height: calc(100vh - 60px); Subtract the height of the bottom bar */
+  padding-bottom: 150px; /* Add padding to the bottom to avoid overlap with the bottom bar */
+  overflow-y: auto; /* Enable scrolling when content exceeds the available height */
 }
 
 .containerMessages {
@@ -342,6 +357,7 @@ justify-content: flex-start;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-image: url('./images/bgmatches.png');
   min-height: calc(100vh - 60px); /* Subtract the height of the bottom bar */
   padding-bottom: 150px; /* Add padding to the bottom to avoid overlap with the bottom bar */
   overflow-y: auto; /* Enable scrolling when content exceeds the available height */
@@ -433,6 +449,7 @@ justify-content: flex-start;
 .matchesCardItemContainer{
     display: flex;
     justify-content: center;
+    padding-top: 20px;
     align-items: center;
 }
 
@@ -463,3 +480,31 @@ justify-content: flex-start;
     transform: scale(1.1);
   }
   
+  .matched-popup {
+    position: fixed;
+    top: 400px;
+    left: calc(100vh - 250px);
+    width: 500px;
+    border-radius: 30px;
+    height: 50px;
+    background: rgb(255, 255, 255); /* Semi-transparent black background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    pointer-events: none; /* Allow clicks behind the popup */
+  }
+  
+  .matched-popup strong {
+    color: green;
+    font-weight: bold;
+    font-size: 30px;
+  }
+  
+  /* .centerIcon{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+.outerThingLol{
+} */
