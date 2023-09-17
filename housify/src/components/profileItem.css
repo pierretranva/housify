@@ -3,6 +3,9 @@
 	width: fit-content;
 	border-radius: 8px;
 	background-color: #1cde53;
+    margin-top: 180px;
+    margin-left: 50px;
+    margin-bottom: 60px;
     padding: 8px;
 	text-align: center;
 	justify-content: center;
@@ -10,10 +13,31 @@
     transform: translate(125px, -20px);
 }
 .profileItemContainer {
+    position: absolute;
+    top: 125px;
 	display: flex;
+    width: 480px;
+    height: 650px;
     flex-direction: column;
     justify-content: center;
     align-content: center;
     text-align: center;
     /* vertical-align: middle; */
+}
+
+.bullet {
+    display: inline-block;
+    width: 8px; /* Adjust the size of the bullet */
+    height: 8px; /* Adjust the size of the bullet */
+    background-color: #000; /* Bullet color */
+    border-radius: 50%; /* Makes it a circle */
+    margin-right: 15px; /* Adjust spacing between bullet and text */
+    position: relative;
+    top: 2px; /* Adjust vertical alignment if needed */
+}
+
+.profileItemFirst {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 6px;
 }

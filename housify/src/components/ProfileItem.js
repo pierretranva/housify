@@ -3,49 +3,50 @@ import "../styles.css"; // Import your CSS styles
 import "./profileItem.css"
 import EnergySavingsLeafIcon from "@mui/icons-material/EnergySavingsLeaf";
 import { Paper, Typography } from "@mui/material";
+import CircleIcon from '@mui/icons-material/Circle';
 
-const ProfileItem = ({ name, matches, location, id, status, price, description}) => {
-let hello = {paper: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    textAlign: "center",
-    verticalAlign: "middle",
-    boxShadow: "4px 4px 4px rgba(0, 0, 0, 0.25)",
-    borderRadius: "25px",
-  },
-}
+const ProfileItem = ({ name, matches, location, id, status, price, description }) => {
+	let hello = {
+		paper: {
+			display: "flex",
+			justifyContent: "center",
+			alignItems: "center",
+			textAlign: "center",
+			verticalAlign: "middle",
+			boxShadow: "4px 4px 4px rgba(0, 0, 0, 0.25)",
+			borderRadius: "25px",
+		},
+	}
 	return (
-		<Paper elevation={6}sx={{maxWidth: 350, borderRadius: 5, justifyContent:"center"}} className="profileItemContainer">
+		<Paper elevation={6} sx={{ maxWidth: 550, borderRadius: 5, justifyContent: "center" }} className="profileItemContainer">
 			<div className="floatingEco">
 				<span className="matchesTextProfileItem">
 					<EnergySavingsLeafIcon color="green" /> {matches}%Eco
 				</span>
 			</div>
 			<div className="profileItemFirst">
-				<Typography>{name}</Typography>
-				<Typography>{location}</Typography>
+				<div>{"Pierre Tran"}</div>
+				<div>{"Blacksburg, Virginia"}</div>
 			</div>
 			<div className="profileItemSecond">
 				<div className="info">
-					<span className="iconProfile">
-                    <EnergySavingsLeafIcon/>
-					</span>
-					<span className="infoContent">{price}</span>
+					<span className="bullet">					</span>
+					<span className="infoContent">{"1 Bedroom"}</span>
 				</div>
 
 				<div className="info">
-					<span className="iconProfile">
-                    <EnergySavingsLeafIcon/>
-					</span>
-					<span className="infoContent">{status}</span>
+					<span className="bullet">					</span>
+					<span className="infoContent">{"Greater than 600 sq ft"}</span>
 				</div>
 
 				<div className="info">
-					<span className="iconProfile">
-                    <EnergySavingsLeafIcon/>
-					</span>
-					<span className="infoContent">{description}</span>
+					<span className="bullet">					</span>
+					<span className="infoContent">{"Less than $1,200/month"}</span>
+				</div>
+
+				<div className="info">
+					<span className="bullet">					</span>
+					<span className="infoContent">{"Eco-Score 50%"}</span>
 				</div>
 			</div>
 		</Paper>
