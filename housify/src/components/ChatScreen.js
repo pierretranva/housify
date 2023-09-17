@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 import { pink } from "@mui/material/colors";
 import { useParams } from "react-router-dom";
 import "./ChatScreen.css";
+import SendIcon from '@mui/icons-material/Send';
+import ForwardIcon from '@mui/icons-material/Forward';
 
 // Define a function to render the avatar image based on the sender
 const renderAvatar = (sender) => {
@@ -88,59 +90,65 @@ function ChatScreen() {
   };
 
   return (
-    <div className="chatScreen">
-      <div className="chatScreen__messages" ref={chatContainerRef}>
-        {messages.map((message, index) => (
-          <div
-            key={index}
-            className={`chatScreen__message ${
-              message.sender === "You" ? "chatScreen__messageUser" : ""
-            }`}
-          >
-            {renderAvatar(message.sender)} {/* Render the avatar */}
-            {message.images && message.images.length > 0 ? (
-              <div className="chatScreen__imageContainer">
-                {message.images.map((image, imageIndex) => (
-                  <img
-                    key={imageIndex}
-                    src={image}
-                    alt={`Sent Image ${imageIndex}`}
-                    className="chatScreen__image"
-                    width={400}
-                    height={400}
-                  />
-                ))}
-              </div>
-            ) : (
-              <p
-                className={`chatScreen__paragraph ${
-                  message.sender === "You"
-                    ? "chatScreen__paragraphUser"
-                    : ""
+    <div className="bg">
+      <div className="chatScreen">
+      <div>
+						<h1 className="chattitle">6270 McCoy Rd</h1>
+					</div>
+        <div className="chatScreen__messages" ref={chatContainerRef}>
+          {messages.map((message, index) => (
+            <div
+              key={index}
+              className={`chatScreen__message ${message.sender === "You" ? "chatScreen__messageUser" : ""
                 }`}
-              >
-                {message.message}
-              </p>
-            )}
+            >
+              {renderAvatar(message.sender)} {/* Render the avatar */}
+              {message.images && message.images.length > 0 ? (
+                <div className="chatScreen__imageContainer">
+                  {message.images.map((image, imageIndex) => (
+                    <img
+                      key={imageIndex}
+                      src={image}
+                      alt={`Sent Image ${imageIndex}`}
+                      className="chatScreen__image"
+                      width={400}
+                      height={400}
+                    />
+                  ))}
+                </div>
+              ) : (
+                <p
+                  className={`chatScreen__paragraph ${message.sender === "You"
+                      ? "chatScreen__paragraphUser"
+                      : ""
+                    }`}
+                >
+                  {message.message}
+                </p>
+              )}
+            </div>
+          ))}
+        </div>
+        <form className="chatScreen__input">
+          <div>
+          <input
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            className="chatScreen__inputField"
+            placeholder="Type a Message...."
+            type="text"
+          />
           </div>
-        ))}
+          <button
+            onClick={handleSend}
+            variant="contained"
+            className="sendButton"
+            style={{ backgroundColor: pink }}
+          >
+            <SendIcon style={{color:"#FFFFFF"}}/>
+          </button>
+        </form>
       </div>
-      <form className="chatScreen__input">
-        <input
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          className="chatScreen__inputField"
-          placeholder="Type a Message...."
-          type="text"
-        />
-        <button
-          onClick={handleSend}
-          variant="contained"
-          style={{ backgroundColor: pink }}
-        >
-          SEND
-        </button>
-      </form>
     </div>
   );
 }
