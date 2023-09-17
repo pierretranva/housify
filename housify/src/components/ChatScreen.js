@@ -3,6 +3,25 @@ import { pink } from "@mui/material/colors";
 import { useParams } from "react-router-dom";
 import "./ChatScreen.css";
 
+// Define a function to render the avatar image based on the sender
+const renderAvatar = (sender) => {
+  if (sender === "ChatBot") {
+    // You can adjust the avatar image path as needed
+    return (
+      <div className="avatarContainer">
+        <img
+          src={require("../images/Exterior/01.png")}
+          alt="Chat Bot"
+          className="avatarImage"
+        />
+      </div>
+    );
+  }
+  // Return null for user's messages
+  return null;
+};
+
+
 function ChatScreen() {
   const { chatId } = useParams();
   const [input, setInput] = useState("");
@@ -25,32 +44,32 @@ function ChatScreen() {
     // Check for specific prompts and provide responses based on chat ID
     let response = null;
 
-		if (input.toLowerCase() === "send pics?") {
-			if (chatId === "1") {
-				response = {
-					sender: "ChatBot",
-					message: "Sure!",
-					images: [
-						require("../images/Interior/01.i.png"),
-						require("../images/Interior/01.o.png"),
-						require("../images/Interior/01.q.png"),
-					],
-				};
-			} 
-			// Add similar conditions for other chat IDs...
-		}
-		if (input.toLowerCase() === "eco score?") {
-			if (chatId === "1") {
-				response = { sender: "ChatBot", 
-        message: "This property has a 30% Eco-Score " };
-      }
-			// Add similar conditions for other chat IDs...
-		}
-    if (input.toLowerCase() == "price?") {
+    if (input.toLowerCase() === "send pics?") {
       if (chatId === "1") {
-        response = { sender: "ChatBot",
-        message: "The listing price of this property is $159,900"};
+        response = {
+          sender: "ChatBot",
+          message: "Sure!",
+          images: [
+            require("../images/Interior/01.i.png"),
+            require("../images/Interior/01.o.png"),
+            require("../images/Interior/01.q.png"),
+          ],
+        };
+      } else if (chatId === "2") {
+        response = {
+          sender: "ChatBot",
+          message: "Yes OFC!",
+        };
       }
+      // Add similar conditions for other chat IDs...
+    }
+    if (input.toLowerCase() === "eco score?") {
+      if (chatId === "1") {
+        response = { sender: "ChatBot", message: "No!" };
+      } else if (chatId === "2") {
+        response = { sender: "ChatBot", message: "Yes OFC!" };
+      }
+      // Add similar conditions for other chat IDs...
     }
 
     // Add the new message to the chat's messages
@@ -78,9 +97,7 @@ function ChatScreen() {
               message.sender === "You" ? "chatScreen__messageUser" : ""
             }`}
           >
-            {message.sender !== "You" && (
-              <div className="chatScreen__avatar" />
-            )}
+            {renderAvatar(message.sender)} {/* Render the avatar */}
             {message.images && message.images.length > 0 ? (
               <div className="chatScreen__imageContainer">
                 {message.images.map((image, imageIndex) => (

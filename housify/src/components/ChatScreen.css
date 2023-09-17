@@ -69,3 +69,28 @@
     margin: 0.5rem;
   }
   
+/* Add styles for the avatar container */
+.avatarContainer {
+    width: 50px; /* Adjust the width as needed */
+    height: 50px; /* Adjust the height as needed */
+    overflow: hidden;
+    border-radius: 50%; /* This creates a circular shape */
+    margin-right: 10px; /* Adjust the margin as needed */
+    margin-top: 10px; /* Add margin at the bottom to align with the message */
+    float: left; /* Align to the left */
+  }
+  
+  .avatarImage {
+    width: 120%;
+    height: 120%;
+    object-fit: cover; /* This ensures the image fits within the circle */
+  }
+  
+  /* Adjust the message styles */
+  .chatScreen__message {
+    clear: both; /* Clear the float to ensure proper alignment */
+    /* Your existing styles for messages... */
+  }
+  
+  /* Existing CSS styles... */
+  
