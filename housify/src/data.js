@@ -1,16 +1,16 @@
 module.exports = [
     {
         id: 1,
-        name: '305 Sinking Spring Holw, New Castle, VA 24127',
+        name: '6270 McCoy Rd, Blacksburg, VA 24127',
         location:'Virginia',
 		year: '1960',
         status: 'For Sale',
-        price: '$159,900',
+        price: '$449,000',
         match: '30',
         description:
-            '2 Bed | 2 Bath | 1,434 Square feet',
+            '4 Bed | 3 Bath | 3,416 Square feet',
         message:
-            'Single-family home. Propane oil for heating. Has 0.4 Acres of land.',
+            'Single-family home. Heat pump for heating and cooling. Has 5.09 Acres of land.',
         image: require('./images/Exterior/01.png')
     },
     {
