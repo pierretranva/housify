@@ -17,11 +17,11 @@ let hello = {paper: {
 }
 	return (
 		<Paper elevation={6}sx={{maxWidth: 350, borderRadius: 5, justifyContent:"center"}} className="profileItemContainer">
-			<Paper elevation={1} className="floatingEco">
+			<div className="floatingEco">
 				<span className="matchesTextProfileItem">
 					<EnergySavingsLeafIcon color="green" /> {matches}%Eco
 				</span>
-			</Paper>
+			</div>
 			<div className="profileItemFirst">
 				<Typography>{name}</Typography>
 				<Typography>{location}</Typography>

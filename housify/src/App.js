@@ -34,8 +34,8 @@ const App = () => {
 	// }
 	return (
 		<Router>
-			<div>
-				<Paper sx={{ position: "fixed", bottom: 0, left: 0, right: 0 }} elevation={3}>
+			<div id="main">
+				<Paper sx={{ position: "fixed", bottom: 0, left: 0, right: 0 }} elevation={4}>
 					<BottomNavigation
 						
 						value={value}

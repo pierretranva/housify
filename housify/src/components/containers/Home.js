@@ -49,11 +49,7 @@ const Home = () => {
   };
 
   return (
-    <div
-      style={{
-        backgroundImage: `url(${backgroundImage})`,
-      }}
-    >
+    <div>
       <div className="containerHome">
         <div className="top">
           <City />
