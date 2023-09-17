@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/housify/static/css/main.88b055dd.css",
+    "main.js": "/housify/static/js/main.01687910.js",
+    "static/js/787.a3bf7b0e.chunk.js": "/housify/static/js/787.a3bf7b0e.chunk.js",
+    "static/media/04.png": "/housify/static/media/04.6a78059fd57890a9617f.png",
+    "static/media/05.png": "/housify/static/media/05.e76aeb6979b30028114d.png",
+    "static/media/01.png": "/housify/static/media/01.68c3237ab4be7d888b5b.png",
+    "static/media/10.png": "/housify/static/media/10.cfc5610695f1e33acbdf.png",
+    "static/media/02.png": "/housify/static/media/02.990f244f8fcd77e9af95.png",
+    "static/media/03.png": "/housify/static/media/03.2a5a92bcae0f242f17e7.png",
+    "static/media/09.png": "/housify/static/media/09.25a234ff77a203395902.png",
+    "static/media/bgmaybe.PNG": "/housify/static/media/bgmaybe.eda069d725cbd2d3d759.PNG",
+    "static/media/06.png": "/housify/static/media/06.e83e21db3cbe89847a3d.png",
+    "static/media/08.png": "/housify/static/media/08.cc067d8fa45841406225.png",
+    "static/media/07.png": "/housify/static/media/07.7300d343314738fb9bc2.png",
+    "static/media/01.o.png": "/housify/static/media/01.o.33ce27fbe6ec3427e116.png",
+    "static/media/01.q.png": "/housify/static/media/01.q.834ad558c57bc45e5071.png",
+    "static/media/01.i.png": "/housify/static/media/01.i.5dd75b166ef0cedaed5c.png",
+    "static/media/pfp.jpg": "/housify/static/media/pfp.b9bd35a484be042a6db0.jpg",
+    "static/media/housify.png": "/housify/static/media/housify.610325fc1933e9788172.png",
+    "static/media/bgmatches.png": "/housify/static/media/bgmatches.7115d5ec73c8a476a4c1.png",
+    "index.html": "/housify/index.html",
+    "main.88b055dd.css.map": "/housify/static/css/main.88b055dd.css.map",
+    "main.01687910.js.map": "/housify/static/js/main.01687910.js.map",
+    "787.a3bf7b0e.chunk.js.map": "/housify/static/js/787.a3bf7b0e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.88b055dd.css",
+    "static/js/main.01687910.js"
+  ]
+}
