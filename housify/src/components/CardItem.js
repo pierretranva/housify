@@ -9,7 +9,18 @@ import ClearIcon from "@mui/icons-material/Clear";
 import BoltIcon from "@mui/icons-material/Bolt";
 import EnergySavingsLeafIcon from "@mui/icons-material/EnergySavingsLeaf";
 
-const CardItem = ({ actions, description, image, matches, name, onPressLeft, onPressRight, status, variant, ecoscore }) => {
+const CardItem = ({
+	actions,
+	description,
+	image,
+	matches,
+	name,
+	onPressLeft,
+	onPressRight,
+	status,
+	variant,
+	ecoscore,
+}) => {
 	// Custom styling
 	const fullWidth = window.innerWidth; // Use window.innerWidth for screen width in React
 	const imageStyle = {
@@ -27,24 +38,35 @@ const CardItem = ({ actions, description, image, matches, name, onPressLeft, onP
 	};
 
 	return (
-		<Paper elevation={4} className="containerCardItem" sx={{ width: "750px",borderRadius: 5, padding: 4, marginTop: 3 }}>
+		<Paper
+			elevation={4}
+			className="containerCardItem"
+			sx={{ width: "750px", borderRadius: 5, padding: 4, marginTop: 3 }}
+		>
 			<div>
 				<img src={image} alt="User" style={imageStyle} />
 			</div>
 
 			{matches && (
-        <div className="matchesCardItem">
-          <span className="matchesTextCardItem">
-            <Icon name="heart" /> {matches}% Match!
-          </span>
-        </div>
-      )}
+				<div className="matchCardItem">
+					<div className="matchCardItemCenter">
+						<div className="matchesCardItem">
+							<FavoriteIcon /> <span>{"  " + matches + "% Match!"}</span>
+						</div>
+					</div>
+				</div>
+			)}
 
 			<span style={nameStyle}>{name}</span>
 
 			{description && <span className="descriptionCardItem">{description}</span>}
-            {ecoscore && <span ><EnergySavingsLeafIcon style={{color: "green"}}/>{ecoscore}</span>}
-
+			{ecoscore && (
+                <div className="outerThingLol">
+                <div className="centerItem">
+                <EnergySavingsLeafIcon style={{ color: "green" }} /> <span>{ecoscore}</span>
+                </div>
+            </div>
+			)}
 
 			{status && (
 				<div className="status">
@@ -63,19 +85,27 @@ const CardItem = ({ actions, description, image, matches, name, onPressLeft, onP
 						</button>
 
 						<button className="cardItemButtons" onClick={onPressLeft}>
-							<Avatar className="avatar" sizes={100} style={{ backgroundColor: "rgb(230,230,230)", width: 60, height: 60 }}>
-                                <ClearIcon style={{ color: "red" }} />
+							<Avatar
+								className="avatar"
+								sizes={100}
+								style={{ backgroundColor: "rgb(230,230,230)", width: 60, height: 60 }}
+							>
+								<ClearIcon style={{ color: "red" }} />
 							</Avatar>
 						</button>
 
 						<button className="cardItemButtons" onClick={onPressRight}>
 							<Avatar className="avatar" style={{ backgroundColor: "rgb(230,230,230)", width: 60, height: 60 }}>
-                            <FavoriteIcon style={{ color: "green" }} />
+								<FavoriteIcon style={{ color: "green" }} />
 							</Avatar>
 						</button>
 
 						<button className="cardItemButtons">
-							<Avatar className="avatar" sx={{ width: "200", height: "200" }} style={{ backgroundColor: "rgb(230,230,230)" }}>
+							<Avatar
+								className="avatar"
+								sx={{ width: "200", height: "200" }}
+								style={{ backgroundColor: "rgb(230,230,230)" }}
+							>
 								<BoltIcon style={{ color: "#301934" }} />
 							</Avatar>
 						</button>

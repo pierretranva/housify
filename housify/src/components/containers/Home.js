@@ -8,7 +8,7 @@ import Demo from "../../data.js";
 import SearchIcon from "@mui/icons-material/Search";
 import TextField from "@mui/material/TextField";
 import InputAdornment from "@mui/material/InputAdornment";
-import houseify from "../../images/houseify.png";
+import housify from "../../images/housify.png";
 import Avatar from "@mui/material/Avatar";
 import pfp from "../../images/pfp.jpg";
 
@@ -37,12 +37,14 @@ const Home = () => {
     if (direction === "right") {
       // Handle matching (e.g., add logic to record a match)
       setShowMatchedMessage(true);
+      console.log("Hello")
 
       // Hide the popup after 2 seconds
       setTimeout(() => {
         setShowMatchedMessage(false);
       }, 2000);
     } else if (direction === "left") {
+        setShowMatchedMessage(false);
       // Handle disliking (e.g., add logic to record a dislike)
     }
 
@@ -73,7 +75,7 @@ const Home = () => {
           <City className="topItem" />
           <Filters className="topItem" />
         </div>
-        <img className="middleTop" src={houseify} height="100px" />
+        <img className="middleTop" src={housify} height="100px" />
         <div className="rightTop">
           <TextField
             className="homeTextField topItem"
