@@ -31,7 +31,7 @@ const ProfileItem = ({ name, matches, location, id, status, price, description }
 			<div className="profileItemSecond">
 				<div className="info">
 					<span className="bullet">					</span>
-					<span className="infoContent">{"1 Bedroom"}</span>
+					<span className="infoContent">{"1 Bedroom, 1 Bath"}</span>
 				</div>
 
 				<div className="info">
