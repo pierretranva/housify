@@ -9,14 +9,15 @@ function ChatScreen() {
 	const [messages, setMessages] = useState([]);
 	const [messageSender, setMessageSender] = useState("You");
 
-    useEffect(() =>{
-     console.log(messages)   
-    },[messages])
+	useEffect(() => {
+		console.log(messages);
+	}, [messages]);
+
 	const handleSend = (e) => {
 		e.preventDefault();
 
 		// Create a new message object based on user input
-		const newMessage = { sender: "You", message: input, image: null };
+		const newMessage = { sender: "You", message: input, images: [] }; // Use an array to store multiple images
 
 		// Check for specific prompts and provide responses based on chat ID
 		let response = null;
@@ -26,30 +27,27 @@ function ChatScreen() {
 				response = {
 					sender: "ChatBot",
 					message: "Sure!",
-					image: require("../images/Interior/02.a.png"),
+					images: [
+						require("../images/Interior/01.i.png"),
+						require("../images/Interior/01.o.png"),
+						require("../images/Interior/01.q.png"),
+					],
 				};
 			} else if (chatId === "2") {
-				response = { sender: "ChatBot", message: "Yes OFC!" };
-			} else if (chatId === "3") {
-				response = { sender: "ChatBot", message: "Yes OFC!" };
-			} else if (chatId === "4") {
-				response = { sender: "ChatBot", message: "Yes OFC!" };
-			} else if (chatId === "5") {
-				response = { sender: "ChatBot", message: "Yes OFC!" };
+				response = {
+					sender: "ChatBot",
+					message: "Yes OFC!",
+				};
 			}
+			// Add similar conditions for other chat IDs...
 		}
 		if (input.toLowerCase() === "eco score?") {
 			if (chatId === "1") {
 				response = { sender: "ChatBot", message: "No!" };
 			} else if (chatId === "2") {
 				response = { sender: "ChatBot", message: "Yes OFC!" };
-			} else if (chatId === "3") {
-				response = { sender: "ChatBot", message: "Yes OFC!" };
-			} else if (chatId === "4") {
-				response = { sender: "ChatBot", message: "Yes OFC!" };
-			} else if (chatId === "5") {
-				response = { sender: "ChatBot", message: "Yes OFC!" };
 			}
+			// Add similar conditions for other chat IDs...
 		}
 
 		// Add the new message to the chat's messages
@@ -75,25 +73,30 @@ function ChatScreen() {
 				{messages.map((message, index) => (
 					<div
 						key={index}
-						className={`chatScreen__message ${message.sender === "You" ? "chatScreen__messageUser" : ""}`}
+						className={`chatScreen__message ${
+							message.sender === "You" ? "chatScreen__messageUser" : ""
+						}`}
 					>
 						{message.sender !== "You" && <div className="chatScreen__avatar" />}
-						{message.image ? (
-                            <div>
-							<img
-								src={message.image} // Use .default to access the image URL
-								alt="Sent Image"
-								className="chatScreen__image"
-                                width={400}
-                                height={400}
-							/>
-                            <p className={`chatScreen__paragraph ${message.sender === "You" ? "chatScreen__paragraphUser" : ""}`}>
-                            {message.message}
-                        </p>
-                        </div>
-                            
+						{message.images && message.images.length > 0 ? (
+							<div className="chatScreen__imageContainer">
+								{message.images.map((image, imageIndex) => (
+									<img
+										key={imageIndex}
+										src={image}
+										alt={`Sent Image ${imageIndex}`}
+										className="chatScreen__image"
+										width={400}
+										height={400}
+									/>
+								))}
+							</div>
 						) : (
-							<p className={`chatScreen__paragraph ${message.sender === "You" ? "chatScreen__paragraphUser" : ""}`}>
+							<p
+								className={`chatScreen__paragraph ${
+									message.sender === "You" ? "chatScreen__paragraphUser" : ""
+								}`}
+							>
 								{message.message}
 							</p>
 						)}
@@ -108,7 +111,11 @@ function ChatScreen() {
 					placeholder="Type a Message...."
 					type="text"
 				/>
-				<button onClick={handleSend} variant="contained" style={{ backgroundColor: pink }}>
+				<button
+					onClick={handleSend}
+					variant="contained"
+					style={{ backgroundColor: pink }}
+				>
 					SEND
 				</button>
 			</form>
