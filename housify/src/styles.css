@@ -45,10 +45,19 @@ height: 100%;
 }
 
 .matchesCardItem {
-	margin-top: -35px;
-	background-color: var(--primary-color);
+	margin-top: -25px;
+	background-color: green;
 	padding: 7px 20px;
+    padding-bottom: 10px;
 	border-radius: 20px;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.matchCardItemCenter{
+    display: flex;
+    justify-content: center;
 }
 
 .matchesTextCardItem {
@@ -302,9 +311,9 @@ justify-content: flex-start;
 }
 
 .title {
-	padding-bottom: 10px;
+	/* padding-bottom: 10px; */
 	font-size: 40px;
-  padding-top: 30px;
+  /* padding-top: 30px; */
   background-color: #ffffff;
 	color: var(--dark-gray);
 }
@@ -487,3 +496,10 @@ justify-content: flex-start;
     font-size: 30px;
   }
   
+  /* .centerIcon{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+.outerThingLol{
+} */

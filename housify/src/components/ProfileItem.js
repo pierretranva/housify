@@ -25,7 +25,7 @@ const ProfileItem = ({ name, matches, location, id, status, price, description }
 				</span>
 			</div>
 			<div className="profileItemFirst">
-				<div>{"Pierre Tran"}</div>
+				<div><b><h2>{"John Doe"}</h2></b></div>
 				<div>{"Blacksburg, Virginia"}</div>
 			</div>
 			<div className="profileItemSecond">
