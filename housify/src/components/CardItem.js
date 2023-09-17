@@ -54,25 +54,25 @@ const CardItem = ({ actions, description, image, matches, name, onPressLeft, onP
 				{actions && (
 					<div className="actionsCardItem">
 						<button className="cardItemButtons">
-							<Avatar style={{ backgroundColor: "rgb(230,230,230)" }}>
+							<Avatar className="avatar" style={{ backgroundColor: "rgb(230,230,230)" }}>
 								<StarIcon style={{ color: "orange" }} />
 							</Avatar>
 						</button>
 
 						<button className="cardItemButtons" onClick={onPressLeft}>
-							<Avatar sizes={100} style={{ backgroundColor: "rgb(230,230,230)", width: 60, height: 60 }}>
+							<Avatar className="avatar" sizes={100} style={{ backgroundColor: "rgb(230,230,230)", width: 60, height: 60 }}>
                                 <ClearIcon style={{ color: "red" }} />
 							</Avatar>
 						</button>
 
 						<button className="cardItemButtons" onClick={onPressRight}>
-							<Avatar style={{ backgroundColor: "rgb(230,230,230)", width: 60, height: 60 }}>
+							<Avatar className="avatar" style={{ backgroundColor: "rgb(230,230,230)", width: 60, height: 60 }}>
                             <FavoriteIcon style={{ color: "green" }} />
 							</Avatar>
 						</button>
 
 						<button className="cardItemButtons">
-							<Avatar sx={{ width: "200", height: "200" }} style={{ backgroundColor: "rgb(230,230,230)" }}>
+							<Avatar className="avatar" sx={{ width: "200", height: "200" }} style={{ backgroundColor: "rgb(230,230,230)" }}>
 								<BoltIcon style={{ color: "#301934" }} />
 							</Avatar>
 						</button>

@@ -3,21 +3,21 @@ import CardMatch from '../CardMatch.js';
 import Icon from '../Icon.js';
 import Demo from '../../data.js';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-
+import '../../styles.css'
 
 const Matches = () => {
   return (
     <div className="bg">
       <div className="containerMatches" >
-        <div>
+        
           <div className="top">
             <span>
               <h1 className="title">Matches</h1>
             </span>
           </div>
 
-          <div>
-            <div id="CardItemHolder">
+          <div className="matchesCardItemContainer">
+            <div className="CardItemHolder">
 
               {Demo.map((item, index) => (
                 <button key={index} className="vy-card-matches">
@@ -31,11 +31,9 @@ const Matches = () => {
                 </button>
               ))}
             </div>
-
           </div>
         </div>
       </div>
-    </div>
   );
 };
 

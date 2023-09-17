@@ -47,7 +47,5 @@
 }
 
 .search-icon {
-    position: absolute;
-    left: 40px;
-    top: 165px;
+    /* position: absolute; */ 
 }

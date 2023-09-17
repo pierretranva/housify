@@ -24,7 +24,7 @@ Define your color constants :root {
 	/* margin: auto;
 
 	width: 60%; */
-
+height: 100%;
 }
 .smallMain{
     margin: auto;
@@ -299,12 +299,14 @@ Define your color constants :root {
 .containerHome {
 	margin: 0 10px;
   background-image: url('./images/bgmaybe.PNG');
+  height: 100%;
 
 
 }
 #CardItemHolder{
     display: flex;
     justify-content: center;
+    height: 100%;
 }
 
 /* CONTAINER - MATCHES */
@@ -400,7 +402,18 @@ Define your color constants :root {
     display: flex;
     justify-content: center;
 }
-
+.CardItemHolder{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* width: 100%; */
+    /* flex-direction: column; */
+}
+.matchesCardItemContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 /* MENU */
 .tabButton {
@@ -420,3 +433,12 @@ Define your color constants :root {
 	height: 20px;
 	padding-bottom: 7px;
 }
+
+.chatCenterDiv{
+    display: flex;
+    justify-content: center;
+}
+.avatar:hover {
+    transform: scale(1.1);
+  }
+  
