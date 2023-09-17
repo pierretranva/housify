@@ -1,9 +1,8 @@
-.bg {
-    display: flex;
+ .bg {
+    /* display: flex; */
     justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    height: 100vh; /* 100% of viewport height for full page */
-  }
+
+  }  
   
   .containerProfile {
     /* Your existing styles for the profile container */
@@ -30,10 +29,9 @@
     position: relative;
     top: 150px; /* Adjust the number of pixels to move it down */
     border-radius: 4%;  
+    z-index: 10;
   }
-  
-  
-  
+
   
   /* Additional styles for centering content inside the container if needed */
   

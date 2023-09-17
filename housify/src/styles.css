@@ -261,10 +261,10 @@ Define your color constants :root {
 
 /* CONTAINER - GENERAL */
 .bg {
-	flex: 1;
+	/* flex: 1;
 	width: var(--dimension-width);
 	height: var(--dimension-height);
-	background-size: cover;
+	background-size: cover; */
 }
 
 .top {
