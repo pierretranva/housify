@@ -1,13 +1,15 @@
-  import React from 'react';
-  import '../../styles.css'
+import React from 'react';
+import './Profile.css'; // Import your CSS file for styling
 
-  import ProfileItem from '../ProfileItem';
-  import Icon from '../Icon';
-  import Demo from '../../data.js';
+import ProfileItem from '../ProfileItem';
+import Icon from '../Icon';
+import Demo from '../../data.js';
+import bgmaybe from '../../images/bgmaybe.PNG';
+import profilepic from '../../images/pfp.jpg';
 
-  const Profile = () => {
-    const {
-      id,
+const Profile = () => {
+  const {
+    id,
     name,
     status,
     price,
@@ -15,29 +17,35 @@
     description,
     message,
     location,
-    image
+    image,
+  } = Demo[0];
 
-    } = Demo[0];
-
-    return (
-      <div className="bg"> {/* Use className for styling in React */}
-        <div className="containerProfile">
-          <div className="photo" style={{ backgroundImage: `url(${image})` }}>
-            <div className="top">
-              <button>
-                <span className="topIconLeft">
-                  <Icon name="chevronLeft" />
-                </span>
-              </button>
-
-              <button>
-                <span className="topIconRight">
-                  <Icon name="optionsV" />
-                </span>
-              </button>
+  return (
+    <div className="bg">
+      <div className="containerProfile">
+        <div className="photo" style={{ backgroundImage: `url(${bgmaybe})` }}>
+          {/* Profile Image */}
+          <div className="profileImageContainer">
+            <div className="profileImage">
+              <img src={profilepic} alt="Profile" className="scaledProfileImage" />
             </div>
           </div>
 
+          <div className="top">
+            <button>
+              <span className="topIconLeft">
+                <Icon name="chevronLeft" />
+              </span>
+            </button>
+
+            <button>
+              <span className="topIconRight">
+                <Icon name="optionsV" />
+              </span>
+            </button>
+          </div>
+        </div>
+        <div id="CardItemHolder">
           <ProfileItem
             matches={match}
             name={name}
@@ -47,24 +55,26 @@
             price={price}
             description={description}
           />
+        </div>
 
-          <div className="actionsProfile">
-            <button className="circledButton">
-              <span className="iconButton">
-                <Icon name="optionsH" />
-              </span>
-            </button>
+        <div className="actionsProfile">
+          <button className="circledButton">
+            <span className="iconButton">
+              <Icon name="optionsH" />
+            </span>
+          </button>
 
-            <button className="roundedButton">
-              <span className="iconButton">
-                <Icon name="chat" />
-              </span>
-              <span className="textButton">Start chatting</span>
-            </button>
-          </div>
+          <button className="roundedButton">
+            <span className="iconButton">
+              <Icon name="chat" />
+            </span>
+            <span className="textButton">Start chatting</span>
+          </button>
         </div>
       </div>
-    );
-  };
+    </div>
+  );
+};
 
-  export default Profile;
+export default Profile;
+  

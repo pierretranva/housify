@@ -5,6 +5,7 @@ import Message from '../Message.js';
 import Demo from '../../data.js';
 import '../../vystyle.css';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
+import SearchIcon from '@mui/icons-material/Search';
 
 const Messages = () => {
   return (
@@ -13,9 +14,14 @@ const Messages = () => {
         <div>
           <div className="top">
             <h1 className="title">Messages</h1>
-            <button className="vy-button">
-              <MoreVertIcon></MoreVertIcon>
-            </button>
+          </div>
+          <div className="search-bar">
+            <SearchIcon className="search-icon"/>
+            <input
+              type="text"
+              placeholder="Search"
+              className="search-input"
+            />
           </div>
 
           <div>

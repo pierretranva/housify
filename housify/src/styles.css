@@ -259,16 +259,17 @@ Define your color constants :root {
 	font-size: 13px;
 }
 
-/* CONTAINER - GENERAL */
 .bg {
-	flex: 1;
+  flex: 1;
 	width: var(--dimension-width);
 	height: var(--dimension-height);
 	background-size: cover;
+  background-color: #f9f9f9;
 }
 
+
 .top {
-	padding-top: 50px;
+	padding-top: 40px;
 	margin: 0 100px;
 	display: flex;
 	flex-direction: row;
@@ -276,13 +277,14 @@ Define your color constants :root {
 	align-items: center;
 }
 
+
 .top > *:not(:last-child) {
-  margin-right: 20px; /* Adjust the value as needed */
+  margin-right: 20px; 
 }
 
 .title {
 	padding-bottom: 10px;
-	font-size: 22px;
+	font-size: 40px;
 	color: var(--dark-gray);
 }
 
@@ -311,7 +313,7 @@ Define your color constants :root {
 	flex: 1;
 	padding: 0 10px;
   background-image: url('./images/bgmatches.png');
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat; */
 }
 
 /* CONTAINER - MESSAGES */
@@ -319,7 +321,7 @@ Define your color constants :root {
 	justify-content: space-between;
 	flex: 1;
 	padding: 0 10px;
-    background-image: url('./images/bgmatches.png');
+  background-image: url('./images/bgmatches.png');
 }
 
 /* CONTAINER - PROFILE */

@@ -11,12 +11,9 @@ const Matches = () => {
       <div className="containerMatches" >
         <div>
           <div className="top">
-            <h1 className="title">Matches</h1>
-            <button className="vy-circle">
-              <span className="icon">
-                <MoreVertIcon />
-              </span>
-            </button>
+            <span>
+              <h1 className="title">Matches</h1>
+            </span>
           </div>
 
           <div>
