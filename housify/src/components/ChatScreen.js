@@ -60,18 +60,22 @@ function ChatScreen() {
       }
       // Add similar conditions for other chat IDs...
     }
-    if (input.toLowerCase() === "eco score?") {
+    else if (input.toLowerCase() === "eco score?") {
       if (chatId === "1") {
         response = { sender: "ChatBot",
         message: "This property has a 30% Eco-Score" };
       }
       // Add similar conditions for other chat IDs...
     }
-    if (input.toLowerCase() === "price?") {
+    else if (input.toLowerCase() === "price?") {
       if (chatId === "1") {
         response = { sender: "ChatBot",
         message: "The listing price is $819,000"};
       }
+    }
+    else{
+        response = { sender: "ChatBot",
+        message: "Sorry I didn't understand that. Ask me 'send pics?', 'eco score?', or 'price?'"};
     }
 
     // Add the new message to the chat's messages
@@ -93,7 +97,7 @@ function ChatScreen() {
     <div className="bg">
       <div className="chatScreen">
       <div>
-						<h1 className="chattitle">6270 McCoy Rd</h1>
+						<h1 className="chattitle">4525 W Benoit Trl, Blacksburg, VA 24060</h1>
 					</div>
         <div className="chatScreen__messages" ref={chatContainerRef}>
           {messages.map((message, index) => (
