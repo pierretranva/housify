@@ -113,7 +113,8 @@ const Home = () => {
                 dragElastic={0.4}
                 onDragEnd={(event, info) => {
                   if (Math.abs(info.point.x) > 100) {
-                    const direction = info.point.x > 0 ? "right" : "left";
+                    const direction = info.point.x > 1000 ? "right" : "left";
+
                     onSwipe(direction);
                   } else {
                     cardX.set(0);
@@ -139,7 +140,7 @@ const Home = () => {
             )}
           </AnimatePresence>
 
-          {showMatchedMessage && swipeDirection === "right" && (
+          {showMatchedMessage && (swipeDirection === "right") && (
             <motion.div
               className="matched-popup"
               initial={{ opacity: 0 }}

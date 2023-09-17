@@ -479,7 +479,7 @@ justify-content: flex-start;
   .matched-popup {
     position: fixed;
     top: 400px;
-    left: 780px;
+    left: calc(100vh - 250px);
     width: 500px;
     border-radius: 30px;
     height: 50px;
