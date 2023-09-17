@@ -2,6 +2,8 @@ import React from 'react';
 import CardItem from '../CardItem.js';
 import Icon from '../Icon.js';
 import Demo from '../../data.js';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
+import "../../styles.css"
 
 const Matches = () => {
   return (
@@ -10,16 +12,16 @@ const Matches = () => {
         <div>
           <div className="top">
             <h1 className="title">Matches</h1>
-            <button>
+            <button className="vy-circle">
               <span className="icon">
-                <Icon name="optionsV" />
+                <MoreVertIcon/>
               </span>
             </button>
           </div>
 
           <div>
             {Demo.map((item, index) => (
-              <button key={index}>
+              <button key={index} className="vy-card-matches">
                 <CardItem
                   image={item.image}
                   name={item.name}

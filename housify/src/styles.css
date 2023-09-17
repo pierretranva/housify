@@ -20,8 +20,14 @@ Define your color constants :root {
     /* background-color: rgb(200,230,213); */
 }
 
-#main {
-	margin: auto;
+.main {
+	/* margin: auto;
+
+	width: 60%; */
+
+}
+.smallMain{
+    margin: auto;
 
 	width: 60%;
 }
@@ -131,11 +137,12 @@ Define your color constants :root {
 
 /* COMPONENT - CITY */
 .city {
-	background-color: var(--white);
+	background-color: rgb(255, 255, 255);
 	padding: 10px;
-	border-radius: 20px;
-	width: 90px;
-	box-shadow: 0 10px 10px 0 var(--black);
+	border-radius: 30px;
+	width: 120px;
+    border: none;
+	box-shadow: 3px 3px 2px 1px rgba(0, 0, 0, 0.25); 
 }
 
 .cityText {
@@ -146,11 +153,12 @@ Define your color constants :root {
 
 /* COMPONENT - FILTERS */
 .filters {
-	background-color: var(--white);
-	padding: 10px;
-	border-radius: 20px;
-	width: 70px;
-	box-shadow: 0 10px 10px 0 var(--black);
+	background-color: rgb(255, 255, 255);
+	padding: 5px;
+	border-radius: 30px;
+	width: 120px;
+    border: none;
+	box-shadow: 3px 3px 2px 1px rgba(0, 0, 0, 0.25); 
 }
 
 .filtersText {
@@ -276,6 +284,13 @@ Define your color constants :root {
 /* CONTAINER - HOME */
 .containerHome {
 	margin: 0 10px;
+  background-image: url('./images/bgmaybe.PNG');
+
+
+}
+#CardItemHolder{
+    display: flex;
+    justify-content: center;
 }
 
 /* CONTAINER - MATCHES */
@@ -283,6 +298,8 @@ Define your color constants :root {
 	justify-content: space-between;
 	flex: 1;
 	padding: 0 10px;
+  background-image: url('./images/bgmatches.png');
+  background-repeat: no-repeat;
 }
 
 /* CONTAINER - MESSAGES */
@@ -290,6 +307,7 @@ Define your color constants :root {
 	justify-content: space-between;
 	flex: 1;
 	padding: 0 10px;
+    background-image: url('./images/bgmatches.png');
 }
 
 /* CONTAINER - PROFILE */

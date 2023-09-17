@@ -1,12 +1,13 @@
 import React from 'react';
 import '../styles.css';
 import Icon from './Icon';
+import FmdGoodIcon from '@mui/icons-material/FmdGood';
 
 const City = () => {
   return (
     <button className="city">
       <span className="cityText">
-        <Icon name="marker" /> New York
+        <FmdGoodIcon/> New York
       </span>
     </button>
   );
