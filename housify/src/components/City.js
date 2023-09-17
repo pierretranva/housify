@@ -5,7 +5,7 @@ import FmdGoodIcon from '@mui/icons-material/FmdGood';
 
 const City = () => {
   return (
-    <button className="city">
+    <button className="city topItem">
       <span className="cityText">
         <FmdGoodIcon/> Blacksburg
       </span>

@@ -5,8 +5,9 @@ module.exports = [
         location:'Virginia',
 		year: '2003',
         status: 'For Sale',
-        price: '$819,000',
-        match: '30',
+        price: '$159,900',
+        match: '24',
+        eco:'30',
         description:
             '5 Bed | 4 Bath | 4,120 Square feet',
         message:
@@ -20,7 +21,8 @@ module.exports = [
 		year: 'n/a',
         status: 'For Rent',
         price: '$1,600/mo',
-        match: '93',
+        match: '87',
+        eco:'93',
         description:
             '2 Bed | 2 Bath | 900 Square feet',
         message: "Apartment. Allow pets. In unit laundry.",
@@ -33,7 +35,8 @@ module.exports = [
 		year: '2023',
         status: 'Under Contract',
         price: '$390,750',
-        match: '94',
+        match: '97',
+        eco:'94',
         description:
             '3 Bed | 3 Bath | 2,046 Square feet',
         message:
@@ -47,7 +50,8 @@ module.exports = [
 		year: '1974',
         status: 'For Sale',
         price: '$259,900',
-        match: '96',
+        match: '88',
+        eco:'73',
         description:
             '3 Bed | 2 Bath | 1,452 Square feet',
         message: "Single-family home. Heat pump for heating and cooling. 1 Acre of land.",
@@ -60,7 +64,8 @@ module.exports = [
 		year: '1987',
         status: 'For Rent',
         price: '$1,300/mo',
-        match: '88',
+        match: '99',
+        eco:'91',
         description:
             '1 Bed | 1 Bath | 432 Square feet',
         message: "Apartment. Electric, Heat pump for heating. Central air cooling.",
@@ -73,7 +78,8 @@ module.exports = [
 		year: '2019',
         status: 'Under Contract',
         price: '$650,000',
-        match: '79',
+        match: '57',
+        eco:'56',
         description:
             '4 Bed | 4 Bath | 2,246 Square feet',
         message: "Single-family home. Bike able neighborhood. Electric, heat pump for cooling.",
@@ -87,6 +93,7 @@ module.exports = [
         status: 'New Construction',
         price: '$454,900',
         match: '79',
+        eco:'66',
         description:
             '3 Bed | 3 Bath | 2,118 Square feet',
         message: "Townhome. Not car dependent. 2 car garage.",
@@ -100,6 +107,7 @@ module.exports = [
         status: 'For Sale',
         price: '$720,000',
         match: '91',
+        eco:'23',
         description:
             '6 Bed | 6 Bath | 3,306 Square feet',
         message: "Townhome. Electric for water heater. Heat pump for cooling and heating.",
@@ -113,6 +121,7 @@ module.exports = [
         status: 'For Rent',
         price: '$1,800/mo',
         match: '69',
+        eco:'40',
         description:
             '2-4 Bed | 2-4 Bath | 859-1,484 Square feet',
         message: "Apartment. Media center. Smoke free. Trash removal.",
@@ -126,6 +135,7 @@ module.exports = [
         status: 'Under Comtract',
         price: '$525/mo',
         match: '79',
+        eco:'69',
         description:
             '4 Bed | 2 Bath | 1,058 Square feet',
         message: "Apartment. Furnished unit. Separate leases",

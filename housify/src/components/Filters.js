@@ -5,7 +5,7 @@ import FilterAltIcon from '@mui/icons-material/FilterAlt';
 
 const Filters = () => {
   return (
-    <button className="filters">
+    <button className="filters topItem">
       <span className="filtersText">
         <FilterAltIcon/> Filters
       </span>

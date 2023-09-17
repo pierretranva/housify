@@ -8,6 +8,13 @@ import Demo from "../../data.js";
 import backgroundImage from "../../images/bg.png";
 import bgCopy from "../../images/bgCopy.png";
 import bgmaybe from "../../images/bgmaybe.PNG";
+import SearchIcon from "@mui/icons-material/Search";
+import TextField from "@mui/material/TextField";
+import InputAdornment from '@mui/material/InputAdornment';
+import houseify from "../../images/houseify.png"
+import Avatar from "@mui/material/Avatar";
+import pfp from "../../images/pfp.jpg"
+
 
 const Home = () => {
 	const [stack, setStack] = useState(Demo);
@@ -57,12 +64,35 @@ const Home = () => {
 
 	return (
 		<div className="main">
+            <div className="top">
+                        <div className="leftTop">
+						<City className="topItem"/>
+						<Filters className="topItem"/>
+                        </div>
+                        <img className="middleTop"src={houseify} height="100px"/>
+                        <div className="rightTop">
+                        <TextField
+                                    
+                                    className="homeTextField topItem"
+									label="Search"
+									variant="filled"
+                                    sx={{ borderRadius: '5px', width: '100%', marginLeft: "auto" }}
+									InputProps={{
+										startAdornment: (
+											<InputAdornment   className="homeTextField" position="start">
+												<SearchIcon className="search-icon" />
+											</InputAdornment>
+										),
+									}}
+								/>
+                                <Avatar sx={{marginTop: ".5rem"}} className="topItem">
+                                    <img src={pfp} height="50px" width="50px"/>
+                                </Avatar>
+                                </div>
+					</div>
 			<div className="smallerMain">
 				<div className="containerHome">
-					<div className="top">
-						<City />
-						<Filters />
-					</div>
+					
 
 					<AnimatePresence>
 						{stack.length > 0 && (
@@ -98,6 +128,7 @@ const Home = () => {
 										variant={true}
                                         onPressRight={handleMatch}
                                         onPressLeft={handleDislike}
+                                        ecoscore={stack[0].eco}
 										actions
 									/>
 								</div>

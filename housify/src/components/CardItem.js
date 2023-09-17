@@ -7,8 +7,9 @@ import StarIcon from "@mui/icons-material/Star";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ClearIcon from "@mui/icons-material/Clear";
 import BoltIcon from "@mui/icons-material/Bolt";
+import EnergySavingsLeafIcon from "@mui/icons-material/EnergySavingsLeaf";
 
-const CardItem = ({ actions, description, image, matches, name, onPressLeft, onPressRight, status, variant }) => {
+const CardItem = ({ actions, description, image, matches, name, onPressLeft, onPressRight, status, variant, ecoscore }) => {
 	// Custom styling
 	const fullWidth = window.innerWidth; // Use window.innerWidth for screen width in React
 	const imageStyle = {
@@ -42,6 +43,8 @@ const CardItem = ({ actions, description, image, matches, name, onPressLeft, onP
 			<span style={nameStyle}>{name}</span>
 
 			{description && <span className="descriptionCardItem">{description}</span>}
+            {ecoscore && <span ><EnergySavingsLeafIcon style={{color: "green"}}/>{ecoscore}</span>}
+
 
 			{status && (
 				<div className="status">

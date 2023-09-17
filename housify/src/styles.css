@@ -271,14 +271,31 @@ height: 100%;
 
 
 .top {
-	padding-top: 40px;
 	margin: 0 100px;
 	display: flex;
 	flex-direction: row;
-	justify-content: start;
+	justify-content: space-between;
 	align-items: center;
+    background-color: #f9f9f9;
 }
+.leftTop, .rightTop{
+display: flex;
+justify-content: flex-start;
+}
+.topItem{
+    margin-left: .5rem;
+    margin-right: .5rem;
+}
+.middleTop{
 
+}
+.homeTextField{
+    /* margin-left:auto ; */
+    background-color: rgba(255,255,255,.8);
+}
+.tf{
+    margin: auto;
+}
 
 .top > *:not(:last-child) {
   margin-right: 20px; 
