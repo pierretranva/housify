@@ -508,3 +508,7 @@ justify-content: flex-start;
   }
 .outerThingLol{
 } */
+.changeTextColor{
+    color: white;
+    font-weight: bold;
+}

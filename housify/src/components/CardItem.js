@@ -51,7 +51,7 @@ const CardItem = ({
 				<div className="matchCardItem">
 					<div className="matchCardItemCenter">
 						<div className="matchesCardItem">
-							<FavoriteIcon /> <span>{"  " + matches + "% Match!"}</span>
+							<FavoriteIcon style={{color: "white"}}/><span className="changeTextColor">{  matches + "% Match!"}</span>
 						</div>
 					</div>
 				</div>
