@@ -1,47 +1,71 @@
-.chatScreen__message{
+/* ChatScreen.css */
+
+/* ChatScreen.css */
+
+.chatScreen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden; /* Hide overflow on the main container */
+  }
+  
+  .chatScreen__messages {
+    flex-grow: 1;
+    max-height: calc(100vh - 200px); /* Adjust the max height as needed */
+    overflow-y: auto;
+    width: 100%;
+  }
+  
+  /* Existing styles for messages */
+  .chatScreen__message {
     display: flex;
     align-items: center;
     padding: 20px;
-}
-
-.chatScreen__paragraph {
+  }
+  
+  .chatScreen__paragraph {
     margin-left: 10px;
     background-color: lightgray;
     padding: 15px;
     border-radius: 20px;
-}
-
-.chatScreen__timpstamp {
+  }
+  
+  .chatScreen__timpstamp {
     text-align: center;
     padding: 20px;
     color: gray;
-}
-
-.chatScreen__paragraphUser {
+  }
+  
+  .chatScreen__paragraphUser {
     margin-left: auto;
     background-color: #29b3cd;
     padding: 15px;
     border-radius: 20px;
-    color: white; 
-}
-
-.chatScreen__input {
+    color: white;
+  }
+  
+  /* Existing styles for input form */
+  .chatScreen__input {
     display: flex;
-    padding: 5px;
+    padding: 2px;
     position: fixed;
     bottom: 0.5in;
     width: 100%;
     border-top: 1px solid darkgray;
-}
-
-
-.chatScreen__inputField {
+  }
+  
+  .chatScreen__inputField {
     flex: 1;
     padding: 10px;
     border: none;
     outline: none;
-}
-.chatScreen__image{
+  }
+  
+  /* Existing styles for images */
+  .chatScreen__image {
     border-radius: 20px;
     margin: 0.5rem;
-}
+  }
+  
