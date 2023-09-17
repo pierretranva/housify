@@ -62,15 +62,23 @@ Define your color constants :root {
 }
 
 .status {
-	padding-bottom: 10px;
+	padding-bottom: 1px;
+  padding-top: 10px;
 	display: flex;
-	flex-direction: row;
 	align-items: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
 }
 
 .statusText {
 	color: var(--gray);
-	font-size: 12px;
+	font-size: 13px;
+  text-align: center;
+  font-weight: bold;
 }
 
 .online,
@@ -138,7 +146,7 @@ Define your color constants :root {
 /* COMPONENT - CITY */
 .city {
 	background-color: rgb(255, 255, 255);
-	padding: 10px;
+	padding: 6px;
 	border-radius: 30px;
 	width: 120px;
     border: none;
@@ -154,10 +162,10 @@ Define your color constants :root {
 /* COMPONENT - FILTERS */
 .filters {
 	background-color: rgb(255, 255, 255);
-	padding: 5px;
+	padding: 6px;
 	border-radius: 30px;
 	width: 120px;
-    border: none;
+  border: none;
 	box-shadow: 3px 3px 2px 1px rgba(0, 0, 0, 0.25); 
 }
 
@@ -261,11 +269,15 @@ Define your color constants :root {
 
 .top {
 	padding-top: 50px;
-	margin: 0 10px;
+	margin: 0 100px;
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
+	justify-content: start;
 	align-items: center;
+}
+
+.top > *:not(:last-child) {
+  margin-right: 20px; /* Adjust the value as needed */
 }
 
 .title {
