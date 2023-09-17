@@ -51,7 +51,9 @@ const Home = () => {
   };
 
   return (
-    <div className="bg">
+    <div className="main">
+        <div className="smallerMain">
+
       <div className="containerHome">
         <div className="top">
           <City />
@@ -83,6 +85,7 @@ const Home = () => {
               }}
               transition={{ duration: 0.2 }}
             >
+            <div id="CardItemHolder">
               <CardItem
                 image={stack[0].image}
                 name={stack[0].name}
@@ -91,6 +94,7 @@ const Home = () => {
                 variant={true}
                 actions
               />
+              </div>
             </motion.div>
           )}
         </AnimatePresence>
@@ -116,6 +120,8 @@ const Home = () => {
         )}
       </div>
     </div>
+    </div>
+
   );
 };
 

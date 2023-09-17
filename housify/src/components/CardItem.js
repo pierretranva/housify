@@ -26,7 +26,7 @@ const CardItem = ({ actions, description, image, matches, name, onPressLeft, onP
 	};
 
 	return (
-		<Paper elevation={4} className="containerCardItem" sx={{ borderRadius: 5, padding: 4, marginTop: 3 }}>
+		<Paper elevation={4} className="containerCardItem" sx={{ width: "750px",borderRadius: 5, padding: 4, marginTop: 3 }}>
 			<div>
 				<img src={image} alt="User" style={imageStyle} />
 			</div>
@@ -61,13 +61,13 @@ const CardItem = ({ actions, description, image, matches, name, onPressLeft, onP
 
 						<button className="cardItemButtons" onClick={onPressLeft}>
 							<Avatar sizes={100} style={{ backgroundColor: "rgb(230,230,230)", width: 60, height: 60 }}>
-								<FavoriteIcon style={{ color: "green" }} />
+                                <ClearIcon style={{ color: "red" }} />
 							</Avatar>
 						</button>
 
 						<button className="cardItemButtons" onClick={onPressRight}>
 							<Avatar style={{ backgroundColor: "rgb(230,230,230)", width: 60, height: 60 }}>
-								<ClearIcon style={{ color: "red" }} />
+                            <FavoriteIcon style={{ color: "green" }} />
 							</Avatar>
 						</button>
 

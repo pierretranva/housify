@@ -3,7 +3,7 @@ import CardItem from '../CardItem.js';
 import Icon from '../Icon.js';
 import Demo from '../../data.js';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-
+import "../../styles.css"
 
 const Matches = () => {
   return (

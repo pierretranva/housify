@@ -20,8 +20,14 @@ Define your color constants :root {
     /* background-color: rgb(200,230,213); */
 }
 
-#main {
-	margin: auto;
+.main {
+	/* margin: auto;
+
+	width: 60%; */
+
+}
+.smallMain{
+    margin: auto;
 
 	width: 60%;
 }
@@ -148,7 +154,7 @@ Define your color constants :root {
 /* COMPONENT - FILTERS */
 .filters {
 	background-color: rgb(255, 255, 255);
-	padding: 10px;
+	padding: 5px;
 	border-radius: 30px;
 	width: 120px;
     border: none;
@@ -279,6 +285,12 @@ Define your color constants :root {
 .containerHome {
 	margin: 0 10px;
   background-image: url('./images/bgmaybe.PNG');
+
+
+}
+#CardItemHolder{
+    display: flex;
+    justify-content: center;
 }
 
 /* CONTAINER - MATCHES */
@@ -287,6 +299,7 @@ Define your color constants :root {
 	flex: 1;
 	padding: 0 10px;
   background-image: url('./images/bgmatches.png');
+  background-repeat: no-repeat;
 }
 
 /* CONTAINER - MESSAGES */
