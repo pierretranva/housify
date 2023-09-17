@@ -6,6 +6,8 @@ import CardItem from '../CardItem';
 import '../../styles.css';
 import Demo from '../../data.js';
 import backgroundImage from '../../images/bg.png';
+import bgCopy from '../../images/bgCopy.png';
+import bgmaybe from '../../images/bgmaybe.PNG';
 
 const Home = () => {
   const [stack, setStack] = useState(Demo);
@@ -49,7 +51,7 @@ const Home = () => {
   };
 
   return (
-    <div>
+    <div className="bg">
       <div className="containerHome">
         <div className="top">
           <City />

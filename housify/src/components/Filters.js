@@ -1,12 +1,13 @@
 import React from 'react';
 import  '../styles';
 import Icon from './Icon';
+import FilterAltIcon from '@mui/icons-material/FilterAlt';
 
 const Filters = () => {
   return (
     <button className="filters">
       <span className="filtersText">
-        <Icon name="filter" /> Filters
+        <FilterAltIcon/> Filters
       </span>
     </button>
   );
