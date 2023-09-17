@@ -11,10 +11,13 @@ import SearchIcon from "@mui/icons-material/Search";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import SmsIcon from "@mui/icons-material/Sms";
 import PersonIcon from "@mui/icons-material/Person";
+import ChatScreen from './components/ChatScreen'; // Import the ChatScreen component
+
+
 
 const App = () => {
 	const [likedProfiles, setLikedProfiles] = useState([]);
-    const [value, setValue] = useState("Explore")
+	const [value, setValue] = useState("Explore")
 	// const [toggleTab, setToggleTab] = useState({ explore: "green", matches: "", chat: "", profile: "" });
 
 	const handleLike = (profile) => {
@@ -37,23 +40,23 @@ const App = () => {
 			<div id="main">
 				<Paper sx={{ position: "fixed", bottom: 0, left: 0, right: 0 }} elevation={4}>
 					<BottomNavigation
-						
+
 						value={value}
 						onChange={(event, newValue) => {
 							setValue(newValue);
 						}}
 					>
 						<Link to="/" className="tabLink">
-							<BottomNavigationAction  sx={{m: 1}} showLabel={true} label="Explore" icon={<SearchIcon />} />
+							<BottomNavigationAction sx={{ m: 1 }} showLabel={true} label="Explore" icon={<SearchIcon />} />
 						</Link>
 						<Link to="/matches" className="tabLink">
-							<BottomNavigationAction sx={{m: 1}} showLabel={true} label="Matches" icon={<FavoriteIcon />} />
+							<BottomNavigationAction sx={{ m: 1 }} showLabel={true} label="Matches" icon={<FavoriteIcon />} />
 						</Link>
 						<Link to="/chat" className="tabLink">
-							<BottomNavigationAction sx={{m: 1}} showLabel={true} label="Chat" icon={<SmsIcon />} />
+							<BottomNavigationAction sx={{ m: 1 }} showLabel={true} label="Chat" icon={<SmsIcon />} />
 						</Link>
 						<Link to="/profile" className="tabLink">
-							<BottomNavigationAction sx={{m: 1}} showLabel={true} label="Profile" icon={<PersonIcon />} />
+							<BottomNavigationAction sx={{ m: 1 }} showLabel={true} label="Profile" icon={<PersonIcon />} />
 						</Link>
 					</BottomNavigation>
 				</Paper>
@@ -62,7 +65,9 @@ const App = () => {
 					<Route path="/matches" element={<Matches likedProfiles={likedProfiles} />} />
 					<Route path="/chat" element={<MessagesScreen />} />
 					<Route path="/profile" element={<ProfileScreen />} />
-				</Routes>
+						<Route path="/chat/:chatId" element={<ChatScreen />} />
+					</Routes>
+
 			</div>
 		</Router>
 	);

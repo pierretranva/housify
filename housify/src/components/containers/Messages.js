@@ -1,9 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // Import the Link component
 import '../../styles.css';
 import Message from '../Message.js';
-import Icon from '../Icon.js';
 import Demo from '../../data.js';
-import '../../vystyle.css'
+import '../../vystyle.css';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 
 const Messages = () => {
@@ -20,13 +20,20 @@ const Messages = () => {
 
           <div>
             {Demo.map((item, index) => (
-              <button key={index} className="vy-button">
-                <Message
-                  image={item.image}
-                  name={item.name}
-                  lastMessage={item.message}
-                />
-              </button>
+              // Wrap each message button with a Link component
+              <Link
+                key={index}
+                to={`/chat/${item.id}`} // Specify the target URL with the message's unique identifier
+                style={{ textDecoration: 'none' }} // Remove underlines from links
+              >
+                <button className="vy-button">
+                  <Message
+                    image={item.image}
+                    name={item.name}
+                    lastMessage={item.message}
+                  />
+                </button>
+              </Link>
             ))}
           </div>
         </div>
