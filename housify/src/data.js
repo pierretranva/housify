@@ -1,16 +1,16 @@
 module.exports = [
     {
         id: 1,
-        name: '6270 McCoy Rd, Blacksburg, VA 24127',
+        name: '4525 W Benoit Trl, Blacksburg, VA 24060',
         location:'Virginia',
-		year: '1960',
+		year: '2003',
         status: 'For Sale',
-        price: '$449,000',
+        price: '$819,000',
         match: '30',
         description:
-            '4 Bed | 3 Bath | 3,416 Square feet',
+            '5 Bed | 4 Bath | 4,120 Square feet',
         message:
-            'Single-family home. Heat pump for heating and cooling. Has 5.09 Acres of land.',
+            'Single-family home. Heat pump for heating and cooling. Has 3.45 Acres of land.',
         image: require('./images/Exterior/01.png')
     },
     {
@@ -107,15 +107,15 @@ module.exports = [
     },
 	{
         id: 9,
-        name: '1222 Patrick Henry Dr, Blacksburg, VA 24060',
+        name: '1701 Liberty Ln, Unit 89, Blacksburg, VA 24060',
         location:'Virginia',
-		year: '2019',
-        status: 'Under Contract',
-        price: '$875-$1,100/mo',
+		year: 'n/a',
+        status: 'For Rent',
+        price: '$1,800/mo',
         match: '69',
         description:
             '2-4 Bed | 2-4 Bath | 859-1,484 Square feet',
-        message: "Apartment. Pool. 24 hr gym. Furnished unit.",
+        message: "Apartment. Media center. Smoke free. Trash removal.",
         image: require('./images/Exterior/09.png')
     },
 	{
