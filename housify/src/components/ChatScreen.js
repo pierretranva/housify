@@ -13,24 +13,25 @@ function ChatScreen() {
     e.preventDefault();
 
     // Create a new message object based on user input
-    const newMessage = { sender: 'You', message: input };
+    const newMessage = { sender: 'You', message: input, image: null };
 
     // Check for specific prompts and provide responses based on chat ID
     let response = null;
 
-    if (input.toLowerCase() === 'send pics') {
+    if (input.toLowerCase() === 'send pics?') {
       if (chatId === '1') {
-        response = { sender: 'ChatBot', message: 'No!' };
+        response = {
+          sender: 'ChatBot',
+          message: 'Sure!',
+          image: require('../images/Interior/02.a.png'),
+        };
       } else if (chatId === '2') {
         response = { sender: 'ChatBot', message: 'Yes OFC!' };
-      }
-      else if (chatId === '3') {
+      } else if (chatId === '3') {
         response = { sender: 'ChatBot', message: 'Yes OFC!' };
-      }
-      else if (chatId === '4') {
+      } else if (chatId === '4') {
         response = { sender: 'ChatBot', message: 'Yes OFC!' };
-      }
-      else if (chatId === '5') {
+      } else if (chatId === '5') {
         response = { sender: 'ChatBot', message: 'Yes OFC!' };
       }
     }
@@ -39,14 +40,11 @@ function ChatScreen() {
         response = { sender: 'ChatBot', message: 'No!' };
       } else if (chatId === '2') {
         response = { sender: 'ChatBot', message: 'Yes OFC!' };
-      }
-      else if (chatId === '3') {
+      } else if (chatId === '3') {
         response = { sender: 'ChatBot', message: 'Yes OFC!' };
-      }
-      else if (chatId === '4') {
+      } else if (chatId === '4') {
         response = { sender: 'ChatBot', message: 'Yes OFC!' };
-      }
-      else if (chatId === '5') {
+      } else if (chatId === '5') {
         response = { sender: 'ChatBot', message: 'Yes OFC!' };
       }
     }
@@ -78,14 +76,24 @@ function ChatScreen() {
               message.sender === 'You' ? 'chatScreen__messageUser' : ''
             }`}
           >
-            {message.sender !== 'You' && <div className="chatScreen__avatar" />}
-            <p
-              className={`chatScreen__paragraph ${
-                message.sender === 'You' ? 'chatScreen__paragraphUser' : ''
-              }`}
-            >
-              {message.message}
-            </p>
+            {message.sender !== 'You' && (
+              <div className="chatScreen__avatar" />
+            )}
+            {message.image ? (
+              <img
+                src={message.image.default} // Use .default to access the image URL
+                alt="Sent Image"
+                className="chatScreen__image"
+              />
+            ) : (
+              <p
+                className={`chatScreen__paragraph ${
+                  message.sender === 'You' ? 'chatScreen__paragraphUser' : ''
+                }`}
+              >
+                {message.message}
+              </p>
+            )}
           </div>
         ))}
       </div>
