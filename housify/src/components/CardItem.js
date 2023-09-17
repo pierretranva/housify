@@ -31,13 +31,13 @@ const CardItem = ({ actions, description, image, matches, name, onPressLeft, onP
 				<img src={image} alt="User" style={imageStyle} />
 			</div>
 
-			{/* {matches && (
+			{matches && (
         <div className="matchesCardItem">
           <span className="matchesTextCardItem">
             <Icon name="heart" /> {matches}% Match!
           </span>
         </div>
-      )} */}
+      )}
 
 			<span style={nameStyle}>{name}</span>
 
