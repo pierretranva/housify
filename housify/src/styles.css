@@ -304,6 +304,8 @@ justify-content: flex-start;
 .title {
 	padding-bottom: 10px;
 	font-size: 40px;
+  padding-top: 30px;
+  background-color: #ffffff;
 	color: var(--dark-gray);
 }
 
@@ -434,6 +436,7 @@ justify-content: flex-start;
 .matchesCardItemContainer{
     display: flex;
     justify-content: center;
+    padding-top: 20px;
     align-items: center;
 }
 

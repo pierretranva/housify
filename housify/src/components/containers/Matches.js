@@ -9,13 +9,9 @@ const Matches = () => {
   return (
     <div className="bg">
       <div className="containerMatches" >
-        
-          <div className="top">
             <span>
               <h1 className="title">Matches</h1>
             </span>
-          </div>
-
           <div className="matchesCardItemContainer">
             <div className="CardItemHolder">
 
