@@ -55,21 +55,21 @@ function ChatScreen() {
             require("../images/Interior/01.q.png"),
           ],
         };
-      } else if (chatId === "2") {
-        response = {
-          sender: "ChatBot",
-          message: "Yes OFC!",
-        };
       }
       // Add similar conditions for other chat IDs...
     }
     if (input.toLowerCase() === "eco score?") {
       if (chatId === "1") {
-        response = { sender: "ChatBot", message: "No!" };
-      } else if (chatId === "2") {
-        response = { sender: "ChatBot", message: "Yes OFC!" };
+        response = { sender: "ChatBot",
+        message: "This property has a 30% Eco-Score" };
       }
       // Add similar conditions for other chat IDs...
+    }
+    if (input.toLowerCase() === "price?") {
+      if (chatId === "1") {
+        response = { sender: "ChatBot",
+        message: "The listing price is $819,000"};
+      }
     }
 
     // Add the new message to the chat's messages
