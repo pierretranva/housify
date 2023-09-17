@@ -8,6 +8,7 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
+    background-image: url('../images/bgmatches.png');
     overflow: hidden; /* Hide overflow on the main container */
   }
   
@@ -15,6 +16,7 @@
     flex-grow: 1;
     max-height: calc(100vh - 200px); /* Adjust the max height as needed */
     overflow-y: auto;
+    padding-bottom: 80px;
     width: 100%;
   }
   
@@ -49,18 +51,25 @@
   /* Existing styles for input form */
   .chatScreen__input {
     display: flex;
+    justify-content: center; /* Horizontal centering */
+    align-items: center; /* Vertical centering */
     padding: 2px;
+    background-color: #ffffff;
     position: fixed;
-    bottom: 0.5in;
+    bottom: 0.55in;
     width: 100%;
-    border-top: 1px solid darkgray;
+    height: 45px;
+    border: 1px solid darkgray;
   }
   
   .chatScreen__inputField {
     flex: 1;
+    width: 800px;
     padding: 10px;
-    border: none;
-    outline: none;
+    align-self: center;
+    border-radius: 10px;
+    margin-right: 10px;
+    border-width: 1px;
   }
   
   /* Existing styles for images */
@@ -90,6 +99,20 @@
   .chatScreen__message {
     clear: both; /* Clear the float to ensure proper alignment */
     /* Your existing styles for messages... */
+  }
+
+  .chattitle {
+    font-size: 30px;
+    margin-top: 70px;
+    /* padding-top: -10px; */
+  }
+
+  .sendButton {
+    background-color: rgb(98, 141, 248);
+    border: none;
+    border-radius: 20px;
+    height: 35px;
+    width: 50px;
   }
   
   /* Existing CSS styles... */
