@@ -41,3 +41,6 @@
     border: none;
     outline: none;
 }
+.chatScreen__image{
+    border-radius: 20px;
+}
