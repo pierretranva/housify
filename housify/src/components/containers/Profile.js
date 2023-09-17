@@ -32,17 +32,17 @@ const Profile = () => {
           </div>
 
           <div className="top">
-            <button>
+            {/* <button>
               <span className="topIconLeft">
                 <Icon name="chevronLeft" />
               </span>
-            </button>
+            </button> */}
 
-            <button>
+            {/* <button>
               <span className="topIconRight">
                 <Icon name="optionsV" />
               </span>
-            </button>
+            </button> */}
           </div>
         </div>
         <div id="CardItemHolder">

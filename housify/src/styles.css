@@ -242,6 +242,8 @@ height: 100%;
 
 .info {
 	padding: 8px 0;
+  padding-left: 60px;
+  padding-top: 15px;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -256,7 +258,7 @@ height: 100%;
 
 .infoContent {
 	color: var(--gray);
-	font-size: 13px;
+	font-size: 15px;
 }
 
 .bg {
