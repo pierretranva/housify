@@ -25,32 +25,32 @@ function ChatScreen() {
     // Check for specific prompts and provide responses based on chat ID
     let response = null;
 
-    if (input.toLowerCase() === "send pics?") {
-      if (chatId === "1") {
-        response = {
-          sender: "ChatBot",
-          message: "Sure!",
-          images: [
-            require("../images/Interior/01.i.png"),
-            require("../images/Interior/01.o.png"),
-            require("../images/Interior/01.q.png"),
-          ],
-        };
-      } else if (chatId === "2") {
-        response = {
-          sender: "ChatBot",
-          message: "Yes OFC!",
-        };
+		if (input.toLowerCase() === "send pics?") {
+			if (chatId === "1") {
+				response = {
+					sender: "ChatBot",
+					message: "Sure!",
+					images: [
+						require("../images/Interior/01.i.png"),
+						require("../images/Interior/01.o.png"),
+						require("../images/Interior/01.q.png"),
+					],
+				};
+			} 
+			// Add similar conditions for other chat IDs...
+		}
+		if (input.toLowerCase() === "eco score?") {
+			if (chatId === "1") {
+				response = { sender: "ChatBot", 
+        message: "This property has a 30% Eco-Score " };
       }
-      // Add similar conditions for other chat IDs...
-    }
-    if (input.toLowerCase() === "eco score?") {
+			// Add similar conditions for other chat IDs...
+		}
+    if (input.toLowerCase() == "price?") {
       if (chatId === "1") {
-        response = { sender: "ChatBot", message: "No!" };
-      } else if (chatId === "2") {
-        response = { sender: "ChatBot", message: "Yes OFC!" };
+        response = { sender: "ChatBot",
+        message: "The listing price of this property is $159,900"};
       }
-      // Add similar conditions for other chat IDs...
     }
 
     // Add the new message to the chat's messages
